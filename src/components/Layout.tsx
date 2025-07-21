@@ -39,15 +39,15 @@ const Layout: React.FC<LayoutProps> = ({ children, currentPage, setCurrentPage }
 
             {/* Desktop Navigation */}
             <div className="hidden md:block">
-              <div className="flex items-center space-x-8">
+              <div className="flex items-center space-x-4">
                 {navItems.map((item) => (
                   <button
                     key={item.id}
                     onClick={() => setCurrentPage(item.id)}
-                    className={`px-3 py-2 text-sm font-medium transition-all duration-200 hover:text-cyan-400 ${
+                    className={`px-4 py-2 text-sm font-medium rounded-lg transition-all duration-200 ${
                       currentPage === item.id
-                        ? 'text-cyan-400 border-b-2 border-cyan-400'
-                        : 'text-gray-300 hover:text-white'
+                        ? 'text-white bg-gradient-to-r from-cyan-500 to-blue-600 shadow-lg'
+                        : 'text-gray-300 hover:text-white hover:bg-gray-800'
                     }`}
                   >
                     {item.label}
@@ -79,9 +79,9 @@ const Layout: React.FC<LayoutProps> = ({ children, currentPage, setCurrentPage }
                     setCurrentPage(item.id);
                     setIsMobileMenuOpen(false);
                   }}
-                  className={`block w-full text-left px-3 py-2 text-sm font-medium transition-colors duration-200 ${
+                  className={`block w-full text-left px-3 py-2 text-sm font-medium rounded-lg transition-colors duration-200 ${
                     currentPage === item.id
-                      ? 'text-cyan-400 bg-gray-700'
+                      ? 'text-white bg-gradient-to-r from-cyan-500 to-blue-600 shadow-lg'
                       : 'text-gray-300 hover:text-white hover:bg-gray-700'
                   }`}
                 >

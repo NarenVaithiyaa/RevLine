@@ -1,37 +1,13 @@
 import React from 'react';
 import EventCard from '../components/EventCard';
-import { Calendar, MapPin, Clock, Users } from 'lucide-react';
+import SpecialEventCard from '../components/SpecialEventCard';
+import { Calendar, Clock, Users } from 'lucide-react';
 import { useScrollAnimation } from '../hooks/useScrollAnimation';
 
 const UpcomingEvents: React.FC = () => {
   const headerRef = useScrollAnimation();
   const statsRef = useScrollAnimation();
-  const eventsRef = useScrollAnimation();
   const infoRef = useScrollAnimation();
-
-  const events = [
-    {
-      sessionNumber: 1,
-      date: '27th July 2025',
-      venue: 'Zone-2, Race course, Coimbatore',
-      agenda: 'Hybrid Circuit Training - Strength, Cardio & Mobility fusion workout designed to test your limits and build community bonds.',
-      time: '6:30-8:00 AM'
-    },
-    {
-      sessionNumber: 2,
-      date: '3rd August 2025',
-      venue: 'Central Park, RS Puram, Coimbatore',
-      agenda: 'Outdoor HIIT Session - High-intensity interval training in nature with team challenges and endurance building exercises.',
-      time: '6:30-8:00 AM'
-    },
-    {
-      sessionNumber: 3,
-      date: '10th August 2025',
-      venue: 'Elite Fitness Hub, Peelamedu',
-      agenda: 'Strength & Power Day - Focus on compound movements, powerlifting fundamentals, and building raw strength together.',
-      time: '7:00-8:30 AM'
-    }
-  ];
 
   return (
     <div className="min-h-screen bg-gray-900 py-20">
@@ -72,30 +48,81 @@ const UpcomingEvents: React.FC = () => {
         </div>
 
         {/* Events Grid */}
-        <div ref={eventsRef} className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16 fade-left">
-          {events.map((event, index) => (
-            <div key={index} className={`scale-in stagger-${index + 1}`}>
-              <EventCard event={event} />
+        <div className="mb-16">
+          {/* Special Featured Event */}
+          <div className="mb-12">
+            <div className="text-center mb-8">
+              <h3 className="text-3xl md:text-4xl font-bold text-white mb-4">
+                🔥 Featured <span className="text-cyan-400">Session</span>
+              </h3>
             </div>
-          ))}
+            <div className="flex justify-center px-4">
+              <SpecialEventCard 
+                sessionNumber={1}
+                date="27th July, 2025"
+                venue="Zone-2, Race course, Coimbatore"
+                time="6:30 - 8:00 AM"
+                agenda="A basic session consisting of warm ups, mild jogging and stretches and warmdown, followed by a coffee session."
+              />
+            </div>
+          </div>
+
+          {/* Other Events */}
+          <div>
+            <div className="text-center mb-8">
+              <h3 className="text-3xl md:text-4xl font-bold text-white mb-4">
+                More <span className="text-cyan-400">Sessions</span>
+              </h3>
+            </div>
+            <div className="flex justify-center px-4">
+              <EventCard 
+                event={{
+                  sessionNumber: 2,
+                  date: "To be announced",
+                  venue: "To be announced",
+                  time: "To be announced",
+                  agenda: "Stay tuned for more exciting sessions coming your way!"
+                }} 
+              />
+            </div>
+          </div>
         </div>
 
         {/* Information Section */}
-        <div ref={infoRef} className="bg-gradient-to-r from-blue-900 to-cyan-900 p-8 rounded-2xl text-center fade-up">
-          <h2 className="text-3xl font-bold text-white mb-6">What to Expect</h2>
-          <div className="grid md:grid-cols-2 gap-8 text-left">
-            <div>
-              <h3 className="text-xl font-semibold text-cyan-400 mb-3">What to Bring:</h3>
-              <ul className="text-gray-200 space-y-2">
+        <div ref={infoRef} className="fade-up">
+          <h2 className="text-3xl md:text-4xl font-bold text-white mb-8 text-center">What to Expect</h2>
+          <div className="flex flex-col md:flex-row gap-6 justify-center items-center px-4">
+            {/* What to Bring Card */}
+            <div className="w-full max-w-xs md:w-64 h-96 bg-gradient-to-br from-gray-800 to-gray-700 shadow-2xl shadow-cyan-500/20 p-6 md:p-9 space-y-3 relative overflow-hidden rounded-2xl border border-gray-600 hover:border-cyan-500/50 transition-all duration-300">
+              <div className="w-24 h-24 bg-gradient-to-r from-cyan-500 to-blue-600 rounded-full absolute -right-5 -top-7">
+                <p className="absolute bottom-6 left-7 text-white text-2xl font-bold">01</p>
+              </div>
+              <div className="fill-cyan-400 w-12">
+                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M19 7h-3V6a4 4 0 0 0-8 0v1H5a1 1 0 0 0-1 1v11a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V8a1 1 0 0 0-1-1zM10 6a2 2 0 0 1 4 0v1h-4V6zm8 13a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V9h2v1a1 1 0 0 0 2 0V9h4v1a1 1 0 0 0 2 0V9h2v10z"/>
+                </svg>
+              </div>
+              <h1 className="font-bold text-xl text-white">What to Bring</h1>
+              <ul className="text-sm text-gray-300 leading-6 space-y-1">
                 <li>• Water bottle and towel</li>
                 <li>• Comfortable workout clothes</li>
                 <li>• Training shoes</li>
                 <li>• Positive attitude and energy!</li>
               </ul>
             </div>
-            <div>
-              <h3 className="text-xl font-semibold text-cyan-400 mb-3">Session Benefits:</h3>
-              <ul className="text-gray-200 space-y-2">
+
+            {/* Session Benefits Card */}
+            <div className="w-full max-w-xs md:w-64 h-96 bg-gradient-to-br from-gray-800 to-gray-700 shadow-2xl shadow-cyan-500/20 p-6 md:p-9 space-y-3 relative overflow-hidden rounded-2xl border border-gray-600 hover:border-cyan-500/50 transition-all duration-300">
+              <div className="w-24 h-24 bg-gradient-to-r from-cyan-500 to-blue-600 rounded-full absolute -right-5 -top-7">
+                <p className="absolute bottom-6 left-7 text-white text-2xl font-bold">02</p>
+              </div>
+              <div className="fill-cyan-400 w-12">
+                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                </svg>
+              </div>
+              <h1 className="font-bold text-xl text-white">Session Benefits</h1>
+              <ul className="text-sm text-gray-300 leading-6 space-y-1">
                 <li>• Expert-guided workouts</li>
                 <li>• Community support & motivation</li>
                 <li>• Progressive fitness challenges</li>

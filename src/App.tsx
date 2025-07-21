@@ -22,7 +22,7 @@ function App() {
   const renderPage = () => {
     switch (currentPage) {
       case 'home':
-        return <Home />;
+        return <Home setCurrentPage={setCurrentPage} />;
       case 'upcoming-events':
         return <UpcomingEvents />;
       case 'completed-events':
@@ -32,7 +32,7 @@ function App() {
       case 'terms':
         return <Terms />;
       default:
-        return <Home />;
+        return <Home setCurrentPage={setCurrentPage} />;
     }
   };
 

@@ -14,8 +14,16 @@ interface EventCardProps {
 }
 
 const EventCard: React.FC<EventCardProps> = ({ event }) => {
+  // Google Form URL - replace with your actual Google Form URL
+  const GOOGLE_FORM_URL = "#";
+
+  const handleRegisterClick = () => {
+    // Open Google Form in a new tab
+    window.open(GOOGLE_FORM_URL, '_blank');
+  };
+
   return (
-    <div className="bg-gradient-to-br from-gray-800 to-gray-700 rounded-2xl p-6 shadow-2xl hover:shadow-cyan-500/20 transition-all duration-300 transform hover:scale-105 border border-gray-600 hover:border-cyan-500/50">
+    <div className="w-full max-w-sm md:max-w-md lg:max-w-lg mx-auto bg-gradient-to-br from-gray-800 to-gray-700 rounded-2xl p-4 md:p-6 shadow-2xl hover:shadow-cyan-500/20 transition-all duration-300 transform hover:scale-105 border border-gray-600 hover:border-cyan-500/50">
       {/* Session Header */}
       <div className="flex items-center justify-between mb-6">
         <h3 className="text-2xl font-bold text-white">
@@ -62,7 +70,10 @@ const EventCard: React.FC<EventCardProps> = ({ event }) => {
       </div>
 
       {/* Registration Button */}
-      <button className="w-full bg-gradient-to-r from-cyan-500 to-blue-600 text-white py-3 px-6 rounded-xl font-semibold hover:from-cyan-600 hover:to-blue-700 transition-all duration-300 flex items-center justify-center space-x-2 group">
+      <button 
+        onClick={handleRegisterClick}
+        className="w-full bg-gradient-to-r from-cyan-500 to-blue-600 text-white py-3 px-6 rounded-xl font-semibold hover:from-cyan-600 hover:to-blue-700 transition-all duration-300 flex items-center justify-center space-x-2 group"
+      >
         <span>Register Now</span>
         <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-200" />
       </button>
