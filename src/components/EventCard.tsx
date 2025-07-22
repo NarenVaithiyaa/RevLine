@@ -17,9 +17,14 @@ const EventCard: React.FC<EventCardProps> = ({ event }) => {
   // Google Form URL - replace with your actual Google Form URL
   const GOOGLE_FORM_URL = "#";
 
+  // Check if this is a placeholder event (to be announced)
+  const isPlaceholder = event.date === "To be announced" || event.venue === "To be announced";
+
   const handleRegisterClick = () => {
-    // Open Google Form in a new tab
-    window.open(GOOGLE_FORM_URL, '_blank');
+    if (!isPlaceholder) {
+      // Open Google Form in a new tab
+      window.open(GOOGLE_FORM_URL, '_blank');
+    }
   };
 
   return (
@@ -72,10 +77,15 @@ const EventCard: React.FC<EventCardProps> = ({ event }) => {
       {/* Registration Button */}
       <button 
         onClick={handleRegisterClick}
-        className="w-full bg-gradient-to-r from-cyan-500 to-blue-600 text-white py-3 px-6 rounded-xl font-semibold hover:from-cyan-600 hover:to-blue-700 transition-all duration-300 flex items-center justify-center space-x-2 group"
+        disabled={isPlaceholder}
+        className={`w-full py-3 px-6 rounded-xl font-semibold transition-all duration-300 flex items-center justify-center space-x-2 group ${
+          isPlaceholder 
+            ? 'bg-gray-600 text-gray-300 cursor-not-allowed' 
+            : 'bg-gradient-to-r from-cyan-500 to-blue-600 text-white hover:from-cyan-600 hover:to-blue-700'
+        }`}
       >
-        <span>Register Now</span>
-        <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-200" />
+        <span>{isPlaceholder ? 'Registrations opening soon!' : 'Register Now'}</span>
+        {!isPlaceholder && <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-200" />}
       </button>
     </div>
   );

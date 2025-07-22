@@ -52,13 +52,13 @@ const Home: React.FC<HomeProps> = ({ setCurrentPage }) => {
           <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center items-center">
             <button 
               onClick={() => setCurrentPage?.('upcoming-events')}
-              className="bg-gradient-to-r from-cyan-500 to-blue-600 text-white px-8 sm:px-10 py-4 sm:py-5 rounded-2xl font-bold text-lg sm:text-xl hover:from-cyan-600 hover:to-blue-700 transition-all duration-300 transform hover:scale-105 shadow-xl shadow-cyan-500/25 w-full sm:w-auto min-w-[200px]"
+              className="bg-gradient-to-r from-cyan-500 to-blue-600 text-white px-4 sm:px-6 py-2 sm:py-3 rounded-xl font-bold text-base sm:text-lg hover:from-cyan-600 hover:to-blue-700 transition-all duration-300 transform hover:scale-105 shadow-xl shadow-cyan-500/25 w-full sm:w-auto min-w-[160px]"
             >
               Join the Movement
             </button>
             <button 
               onClick={scrollToWhySection}
-              className="border-2 border-cyan-400 text-cyan-400 px-8 sm:px-10 py-4 sm:py-5 rounded-2xl font-bold text-lg sm:text-xl hover:bg-cyan-400 hover:text-gray-900 transition-all duration-300 backdrop-blur-sm bg-white/5 w-full sm:w-auto min-w-[200px]"
+              className="border-2 border-cyan-400 text-cyan-400 px-4 sm:px-6 py-2 sm:py-3 rounded-xl font-bold text-base sm:text-lg hover:bg-cyan-400 hover:text-gray-900 transition-all duration-300 backdrop-blur-sm bg-white/5 w-full sm:w-auto min-w-[160px]"
             >
               Learn More
             </button>
@@ -168,8 +168,8 @@ const Home: React.FC<HomeProps> = ({ setCurrentPage }) => {
             </div>
           </div>
           
-          <div className="bg-gradient-to-r from-cyan-500 to-blue-600 p-8 rounded-2xl text-center shadow-xl shadow-cyan-500/25 max-w-2xl mx-auto">
-            <p className="text-2xl md:text-3xl font-black text-white leading-relaxed">
+          <div className="bg-gradient-to-r from-cyan-500 to-blue-600 p-4 rounded-xl text-center shadow-xl shadow-cyan-500/25 max-w-xl mx-auto">
+            <p className="text-lg md:text-xl font-black text-white leading-relaxed">
               Just show up. We'll handle the rest.
             </p>
           </div>
@@ -253,10 +253,10 @@ const Home: React.FC<HomeProps> = ({ setCurrentPage }) => {
           <div className="flex items-center justify-center">
             <button 
               onClick={() => setCurrentPage?.('upcoming-events')}
-              className="bg-white text-cyan-600 px-12 py-6 rounded-2xl font-black text-2xl hover:bg-gray-100 transition-all duration-300 transform hover:scale-105 shadow-2xl flex items-center space-x-3 group"
+              className="bg-white text-cyan-600 px-6 py-3 rounded-xl font-black text-lg hover:bg-gray-100 transition-all duration-300 transform hover:scale-105 shadow-2xl flex items-center space-x-2 group"
             >
               <span>Let's Rev It Up, Together!</span>
-              <ArrowRight className="w-7 h-7 group-hover:translate-x-1 transition-transform duration-200" />
+              <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-200" />
             </button>
           </div>
         </div>
