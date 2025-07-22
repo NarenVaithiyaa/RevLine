@@ -107,6 +107,7 @@ const UpcomingEvents: React.FC = () => {
                 <li>• Water bottle and towel</li>
                 <li>• Comfortable workout clothes</li>
                 <li>• Training shoes</li>
+                <li>• Personal yoga mat (optional)</li>
                 <li>• Positive attitude and energy!</li>
               </ul>
             </div>
@@ -123,7 +124,7 @@ const UpcomingEvents: React.FC = () => {
               </div>
               <h1 className="font-bold text-xl text-white">Session Benefits</h1>
               <ul className="text-sm text-gray-300 leading-6 space-y-1">
-                <li>• Expert-guided workouts</li>
+                <li>• Guided workouts</li>
                 <li>• Community support & motivation</li>
                 <li>• Progressive fitness challenges</li>
                 <li>• Networking with like-minded people</li>
