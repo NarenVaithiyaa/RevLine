@@ -52,16 +52,35 @@ const Home: React.FC<HomeProps> = ({ setCurrentPage }) => {
           <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center items-center">
             <button 
               onClick={() => setCurrentPage?.('upcoming-events')}
-              className="bg-gradient-to-r from-cyan-500 to-blue-600 text-white px-8 sm:px-10 py-4 sm:py-5 rounded-2xl font-bold text-lg sm:text-xl hover:from-cyan-600 hover:to-blue-700 transition-all duration-300 transform hover:scale-105 shadow-xl shadow-cyan-500/25 w-full sm:w-auto min-w-[200px]"
+              className="bg-gradient-to-r from-cyan-500 to-blue-600 text-white px-4 sm:px-6 py-2 sm:py-3 rounded-xl font-bold text-base sm:text-lg hover:from-cyan-600 hover:to-blue-700 transition-all duration-300 transform hover:scale-105 shadow-xl shadow-cyan-500/25 w-full sm:w-auto min-w-[160px]"
             >
               Join the Movement
             </button>
             <button 
               onClick={scrollToWhySection}
-              className="border-2 border-cyan-400 text-cyan-400 px-8 sm:px-10 py-4 sm:py-5 rounded-2xl font-bold text-lg sm:text-xl hover:bg-cyan-400 hover:text-gray-900 transition-all duration-300 backdrop-blur-sm bg-white/5 w-full sm:w-auto min-w-[200px]"
+              className="border-2 border-cyan-400 text-cyan-400 px-4 sm:px-6 py-2 sm:py-3 rounded-xl font-bold text-base sm:text-lg hover:bg-cyan-400 hover:text-gray-900 transition-all duration-300 backdrop-blur-sm bg-white/5 w-full sm:w-auto min-w-[160px]"
             >
               Learn More
             </button>
+          </div>
+          
+          {/* Instagram Follow Section */}
+          <div className="mt-8 flex items-center justify-center gap-3">
+            <a 
+              href="https://instagram.com/_.revline._" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="flex items-center gap-3 text-white hover:text-cyan-400 transition-colors duration-300 group"
+            >
+              <svg 
+                className="w-6 h-6 group-hover:scale-110 transition-transform duration-300" 
+                fill="currentColor" 
+                viewBox="0 0 24 24"
+              >
+                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+              </svg>
+              <span className="text-lg font-medium">Follow us on Instagram</span>
+            </a>
           </div>
         </div>
       </section>
@@ -168,8 +187,8 @@ const Home: React.FC<HomeProps> = ({ setCurrentPage }) => {
             </div>
           </div>
           
-          <div className="bg-gradient-to-r from-cyan-500 to-blue-600 p-8 rounded-2xl text-center shadow-xl shadow-cyan-500/25 max-w-2xl mx-auto">
-            <p className="text-2xl md:text-3xl font-black text-white leading-relaxed">
+          <div className="bg-gradient-to-r from-cyan-500 to-blue-600 p-4 rounded-xl text-center shadow-xl shadow-cyan-500/25 max-w-xl mx-auto">
+            <p className="text-lg md:text-xl font-black text-white leading-relaxed">
               Just show up. We'll handle the rest.
             </p>
           </div>
@@ -253,10 +272,10 @@ const Home: React.FC<HomeProps> = ({ setCurrentPage }) => {
           <div className="flex items-center justify-center">
             <button 
               onClick={() => setCurrentPage?.('upcoming-events')}
-              className="bg-white text-cyan-600 px-12 py-6 rounded-2xl font-black text-2xl hover:bg-gray-100 transition-all duration-300 transform hover:scale-105 shadow-2xl flex items-center space-x-3 group"
+              className="bg-white text-cyan-600 px-6 py-3 rounded-xl font-black text-lg hover:bg-gray-100 transition-all duration-300 transform hover:scale-105 shadow-2xl flex items-center space-x-2 group"
             >
               <span>Let's Rev It Up, Together!</span>
-              <ArrowRight className="w-7 h-7 group-hover:translate-x-1 transition-transform duration-200" />
+              <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-200" />
             </button>
           </div>
         </div>
