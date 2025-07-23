@@ -24,8 +24,8 @@ const SpecialEventCard: React.FC<SpecialEventCardProps> = ({
   };
 
   return (
-    <div className="w-full max-w-sm md:max-w-md lg:w-96 h-auto md:h-[500px] bg-neutral-800 rounded-3xl text-neutral-300 p-4 md:p-6 flex flex-col items-start justify-center gap-4 hover:bg-gray-900 hover:shadow-2xl hover:shadow-cyan-400 transition-all duration-300 transform hover:scale-105 mx-auto">
-      <div className="w-full h-40 md:h-48 bg-cyan-300 rounded-2xl overflow-hidden">
+    <div className="w-full max-w-sm md:max-w-md lg:w-96 h-auto md:h-[580px] bg-neutral-800 rounded-3xl text-neutral-300 p-4 md:p-6 flex flex-col items-start justify-center gap-4 hover:bg-gray-900 hover:shadow-2xl hover:shadow-cyan-400 transition-all duration-300 transform hover:scale-105 mx-auto">
+      <div className="w-full h-56 md:h-64 bg-cyan-300 rounded-2xl overflow-hidden">
         <img 
           src="/images/zone2.png" 
           alt="Zone-2 Race Course" 
@@ -52,7 +52,15 @@ const SpecialEventCard: React.FC<SpecialEventCardProps> = ({
         {agenda && (
           <div className="mt-3">
             <p className="text-cyan-400 font-semibold text-sm mb-2">🎯 Agenda:</p>
-            <p className="text-gray-300 text-sm leading-relaxed">{agenda}</p>
+            <div className="text-gray-300 text-sm leading-relaxed">
+              {agenda.split('•').map((item, index) => (
+                item.trim() && (
+                  <div key={index} className="mb-1">
+                    {item.trim()}
+                  </div>
+                )
+              ))}
+            </div>
           </div>
         )}
       </div>

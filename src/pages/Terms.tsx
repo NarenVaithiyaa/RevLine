@@ -6,7 +6,6 @@ const Terms: React.FC = () => {
   const headerRef = useScrollAnimation();
   const comingSoonRef = useScrollAnimation();
   const keyPointsRef = useScrollAnimation();
-  const contactRef = useScrollAnimation();
 
   return (
     <div className="min-h-screen bg-gray-900 py-20">
@@ -64,25 +63,6 @@ const Terms: React.FC = () => {
               Our community thrives on respect, support, and positive energy. 
               Clear guidelines ensure everyone feels welcome and valued.
             </p>
-          </div>
-        </div>
-
-        {/* Temporary Contact Section */}
-        <div ref={contactRef} className="bg-gradient-to-r from-gray-800 to-gray-700 rounded-2xl p-8 text-center fade-up">
-          <h2 className="text-3xl font-bold text-white mb-6">
-            Questions About Our Policies?
-          </h2>
-          <p className="text-xl text-gray-300 mb-8">
-            In the meantime, if you have any questions about participation, safety, or community guidelines, 
-            please don't hesitate to reach out to us directly.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button className="bg-gradient-to-r from-cyan-500 to-blue-600 text-white px-8 py-3 rounded-lg font-semibold hover:from-cyan-600 hover:to-blue-700 transition-all duration-300">
-              Contact Us
-            </button>
-            <button className="border-2 border-cyan-400 text-cyan-400 px-8 py-3 rounded-lg font-semibold hover:bg-cyan-400 hover:text-gray-900 transition-all duration-300">
-              Join Our Community
-            </button>
           </div>
         </div>
       </div>

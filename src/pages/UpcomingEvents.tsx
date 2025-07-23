@@ -53,7 +53,7 @@ const UpcomingEvents: React.FC = () => {
           <div className="mb-12">
             <div className="text-center mb-8">
               <h3 className="text-3xl md:text-4xl font-bold text-white mb-4">
-                🔥 Featured <span className="text-cyan-400">Session</span>
+                Featured <span className="text-cyan-400">Session</span>
               </h3>
             </div>
             <div className="flex justify-center px-4">
@@ -62,7 +62,7 @@ const UpcomingEvents: React.FC = () => {
                 date="27th July, 2025"
                 venue="Zone-2, Race course, Coimbatore"
                 time="6:30 - 8:00 AM"
-                agenda="A basic session consisting of warm ups, mild jogging and stretches and warmdown, followed by a coffee session."
+                agenda="6:30 - 6.50: WELCOME SPEECH • 6:50 - 7.00: WARM UP • 7.00 - 7.30: JOG AND WALK • 7.30 - 7.50: FUN GAME • 7.50 - 8.00: WARM DOWN AND SOCIALISE"
               />
             </div>
           </div>
