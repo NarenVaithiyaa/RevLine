@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Users, Target, Zap, Calendar, MessageCircle, Trophy, ArrowRight } from 'lucide-react';
 import { useScrollAnimation } from '../hooks/useScrollAnimation';
 
@@ -14,6 +14,23 @@ const Home: React.FC<HomeProps> = ({ setCurrentPage }) => {
   const whoRef = useScrollAnimation();
   const purposeRef = useScrollAnimation();
   const ctaRef = useScrollAnimation();
+
+  const [displayedText, setDisplayedText] = useState('');
+  const fullText = "A Hybrid Training Club";
+
+  useEffect(() => {
+    let currentIndex = 0;
+    const timer = setInterval(() => {
+      if (currentIndex < fullText.length) {
+        setDisplayedText(fullText.substring(0, currentIndex + 1));
+        currentIndex++;
+      } else {
+        clearInterval(timer);
+      }
+    }, 100); // Adjust speed by changing this value (milliseconds per letter)
+
+    return () => clearInterval(timer);
+  }, []);
 
   const scrollToWhySection = () => {
     whyRef.current?.scrollIntoView({ 
@@ -32,15 +49,17 @@ const Home: React.FC<HomeProps> = ({ setCurrentPage }) => {
         <div className="relative z-10 text-center px-6 sm:px-8 lg:px-12 max-w-5xl mx-auto">
           <div className="mb-12">
             <div className="flex items-center justify-center mb-8">
-              <div className="bg-gradient-to-r from-cyan-400 to-blue-500 p-4 rounded-2xl shadow-lg shadow-cyan-500/25">
-                <Zap className="w-10 h-10 text-white" />
-              </div>
+              <img
+                src="/images/revline_logo.png"
+                alt="RevLine Logo"
+                className="w-24 h-24 object-contain"
+              />
             </div>
             <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-black bg-gradient-to-r from-cyan-400 via-blue-500 to-cyan-400 bg-clip-text text-transparent mb-6 tracking-tight">
               REVLINE
             </h1>
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-8 tracking-wide">
-              A Hybrid Training Club
+              {displayedText}<span className="animate-pulse">|</span>
             </h2>
             <div className="max-w-3xl mx-auto">
               <p className="text-xl sm:text-2xl md:text-3xl text-cyan-300 font-semibold italic leading-relaxed">

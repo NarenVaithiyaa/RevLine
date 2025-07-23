@@ -26,17 +26,14 @@ const Layout: React.FC<LayoutProps> = ({ children, currentPage, setCurrentPage }
           <div className="flex items-center justify-between h-16">
             {/* Logo */}
             <div 
-              className="flex items-center space-x-2 cursor-pointer group"
+              className="flex items-center cursor-pointer group"
               onClick={() => setCurrentPage('home')}
             >
               <img
                 src="/images/revline_logo.png"
                 alt="RevLine Logo"
-                className="w-10 h-10 object-contain group-hover:scale-110 transition-transform duration-200"
+                className="w-20 h-20 object-contain group-hover:scale-110 transition-transform duration-200"
               />
-              <span className="text-xl font-bold bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
-                REVLINE
-              </span>
             </div>
 
             {/* Desktop Navigation */}
@@ -102,17 +99,12 @@ const Layout: React.FC<LayoutProps> = ({ children, currentPage, setCurrentPage }
       <footer className="bg-gray-900 border-t border-gray-800 py-8">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
-            <div className="flex items-center justify-center space-x-2 mb-4">
-              <div className="bg-gradient-to-r from-cyan-400 to-blue-500 p-2 rounded-lg">
-                <img
-                  src="/images/revline_logo.png"
-                  alt="RevLine Logo"
-                  className="w-6 h-6 object-contain"
-                />
-              </div>
-              <span className="text-xl font-bold bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
-                REVLINE
-              </span>
+            <div className="flex items-center justify-center mb-4">
+              <img
+                src="/images/revline_logo.png"
+                alt="RevLine Logo"
+                className="w-24 h-24 object-contain"
+              />
             </div>
             <p className="text-gray-400 text-sm">
               © 2025 RevLine. Building stronger communities, one workout at a time.

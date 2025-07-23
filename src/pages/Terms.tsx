@@ -26,44 +26,99 @@ const Terms: React.FC = () => {
           </p>
         </div>
 
-        {/* Coming Soon Section */}
+        {/* Rules & Regulations Section */}
         <div ref={comingSoonRef} className="bg-gradient-to-br from-gray-800 to-gray-700 rounded-2xl p-12 text-center shadow-2xl mb-16 scale-in">
-          <div className="max-w-2xl mx-auto">
-            <div className="bg-gradient-to-r from-cyan-500 to-blue-600 p-4 rounded-full w-20 h-20 mx-auto mb-8 flex items-center justify-center">
-              <Shield className="w-10 h-10 text-white" />
+          <h2 className="text-3xl font-bold text-white mb-12">
+            Rules & Regulations for Club Members
+          </h2>
+          <div className="space-y-8 text-gray-300 text-left">
+            <div>
+              <h3 className="text-xl font-semibold text-cyan-400 mb-4">Respect & Inclusivity</h3>
+              <ul className="list-disc pl-5 space-y-2">
+                <li>All members must treat each other with respect, kindness, and inclusivity.</li>
+                <li>No discrimination based on age, gender, background, or fitness level.</li>
+                <li>Offensive language, harassment, or any form of disrespect will not be tolerated.</li>
+              </ul>
             </div>
-            <h2 className="text-3xl font-bold text-white mb-6">
-              Legal Documentation
-            </h2>
-            <p className="text-xl text-gray-300 mb-8 leading-relaxed">
-              Our comprehensive terms and conditions, privacy policy, and community guidelines 
-              are being finalized by our legal team to ensure the best protection and clarity for all members.
-            </p>
-            <div className="inline-flex items-center space-x-2 bg-cyan-500/20 px-6 py-3 rounded-full">
-              <FileText className="w-5 h-5 text-cyan-400" />
-              <span className="text-cyan-400 font-semibold">Coming Soon</span>
+
+            <div>
+              <h3 className="text-xl font-semibold text-cyan-400 mb-4">Attendance & Participation</h3>
+              <ul className="list-disc pl-5 space-y-2">
+                <li>Members are encouraged to attend weekend group activities regularly.</li>
+                <li>Daily workout check-ins (optional) will help with consistency and motivation.</li>
+                <li>Inform admins if you’re unable to attend any group event.</li>
+              </ul>
+            </div>
+
+            <div>
+              <h3 className="text-xl font-semibold text-cyan-400 mb-4">Safety & Health</h3>
+              <ul className="list-disc pl-5 space-y-2">
+                <li>Members participate at their own risk. Please consult a doctor before joining if you have health concerns.</li>
+                <li>Stay hydrated, wear appropriate attire, and follow basic fitness safety guidelines.</li>
+                <li>Report injuries or issues to the organizers immediately.</li>
+              </ul>
+            </div>
+
+            <div>
+              <h3 className="text-xl font-semibold text-cyan-400 mb-4">Communication & Sharing</h3>
+              <ul className="list-disc pl-5 space-y-2">
+                <li>Use the official WhatsApp group or designated platform for updates only (avoid spam).</li>
+                <li>Positive sharing: motivational posts, progress photos, or wellness tips are welcome!</li>
+                <li>Don’t promote other clubs, events, or products without permission from the admins.</li>
+              </ul>
+            </div>
+
+            <div>
+              <h3 className="text-xl font-semibold text-cyan-400 mb-4">Discipline & Conduct</h3>
+              <ul className="list-disc pl-5 space-y-2">
+                <li>Be punctual for sessions and respect the schedule.</li>
+                <li>Keep locations clean, and be mindful of public spaces (e.g., parks, gyms, trails).</li>
+                <li>Repeated indiscipline or misconduct may lead to temporary or permanent removal from the group.</li>
+              </ul>
+            </div>
+
+            <div>
+              <h3 className="text-xl font-semibold text-cyan-400 mb-4">Community & Growth</h3>
+              <ul className="list-disc pl-5 space-y-2">
+                <li>Members can suggest new activities or volunteer as event leaders.</li>
+                <li>Referrals are encouraged — bring friends/family who align with our vibe!</li>
+                <li>Revline is a community, not a competition — we rise together.</li>
+              </ul>
+            </div>
+
+            <div>
+              <p className="text-gray-400 italic">
+                By joining Revline, members agree to follow these rules and uphold the values of respect, discipline, and positive community energy.
+              </p>
             </div>
           </div>
         </div>
 
         {/* Key Points Preview */}
-        <div ref={keyPointsRef} className="grid md:grid-cols-2 gap-8 mb-16 fade-left">
+        <div ref={keyPointsRef} className="grid md:grid-cols-2 gap-0 mb-0 fade-left">
           <div className="bg-gradient-to-br from-blue-900 to-blue-800 p-8 rounded-2xl scale-in stagger-1">
-            <Shield className="w-12 h-12 text-cyan-400 mb-4" />
-            <h3 className="text-2xl font-bold text-white mb-4">Safety First</h3>
+            <Shield className="w-12 h-12 text-cyan-400 mb-0" />
+            <h3 className="text-2xl font-bold text-white mb-0">Safety First</h3>
             <p className="text-gray-200 leading-relaxed">
               All activities are designed with safety as our top priority. 
               Proper guidelines and safety protocols will be clearly outlined.
             </p>
           </div>
           <div className="bg-gradient-to-br from-cyan-900 to-cyan-800 p-8 rounded-2xl scale-in stagger-2">
-            <AlertCircle className="w-12 h-12 text-cyan-400 mb-4" />
-            <h3 className="text-2xl font-bold text-white mb-4">Community Standards</h3>
+            <AlertCircle className="w-12 h-12 text-cyan-400 mb-0" />
+            <h3 className="text-2xl font-bold text-white mb-0">Community Standards</h3>
             <p className="text-gray-200 leading-relaxed">
               Our community thrives on respect, support, and positive energy. 
               Clear guidelines ensure everyone feels welcome and valued.
             </p>
           </div>
+        </div>
+
+        {/* Welcome Message */}
+        <div className="text-center -mt-6">
+          <p className="text-3xl font-bold text-cyan-400">
+            Welcome to RevLine! You're joining us on a journey outside of the comfort zone.
+          </p>
         </div>
       </div>
     </div>
