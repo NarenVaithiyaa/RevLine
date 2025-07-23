@@ -42,11 +42,11 @@ const Home: React.FC<HomeProps> = ({ setCurrentPage }) => {
   return (
     <div className="bg-gray-900">
       {/* Hero Section */}
-      <section ref={heroRef} className="relative min-h-screen flex items-center justify-center overflow-hidden fade-up">
+      <section ref={heroRef} className="relative min-h-screen flex items-center justify-center overflow-hidden fade-up -mt-16">
         <div className="absolute inset-0 bg-gradient-to-br from-blue-900/30 to-cyan-900/30"></div>
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(6,182,212,0.1),transparent_50%)]"></div>
         
-        <div className="relative z-10 text-center px-6 sm:px-8 lg:px-12 max-w-5xl mx-auto">
+        <div className="relative z-10 text-center px-6 sm:px-8 lg:px-12 max-w-5xl mx-auto transform -translate-y-8">
           <div className="mb-12">
             <div className="flex items-center justify-center mb-8 space-x-3">
               <img
