@@ -11,9 +11,10 @@ interface Event {
 
 interface EventCardProps {
   event: Event;
+  isCompleted?: boolean;
 }
 
-const EventCard: React.FC<EventCardProps> = ({ event }) => {
+const EventCard: React.FC<EventCardProps> = ({ event, isCompleted = false }) => {
   // Google Form URL - replace with your actual Google Form URL
   const GOOGLE_FORM_URL = "#";
 
@@ -34,8 +35,14 @@ const EventCard: React.FC<EventCardProps> = ({ event }) => {
         <h3 className="text-2xl font-bold text-white">
           Session {event.sessionNumber}
         </h3>
-        <div className="bg-gradient-to-r from-cyan-500 to-blue-600 px-3 py-1 rounded-full">
-          <span className="text-white text-sm font-semibold">UPCOMING</span>
+        <div className={`px-3 py-1 rounded-full ${
+          isCompleted 
+            ? 'bg-gradient-to-r from-green-500 to-emerald-600' 
+            : 'bg-gradient-to-r from-cyan-500 to-blue-600'
+        }`}>
+          <span className="text-white text-sm font-semibold">
+            {isCompleted ? 'COMPLETED' : 'UPCOMING'}
+          </span>
         </div>
       </div>
 
@@ -75,18 +82,20 @@ const EventCard: React.FC<EventCardProps> = ({ event }) => {
       </div>
 
       {/* Registration Button */}
-      <button 
-        onClick={handleRegisterClick}
-        disabled={isPlaceholder}
-        className={`w-full py-3 px-6 rounded-xl font-semibold transition-all duration-300 flex items-center justify-center space-x-2 group ${
-          isPlaceholder 
-            ? 'bg-gray-600 text-gray-300 cursor-not-allowed' 
-            : 'bg-gradient-to-r from-cyan-500 to-blue-600 text-white hover:from-cyan-600 hover:to-blue-700'
-        }`}
-      >
-        <span>{isPlaceholder ? 'Registrations opening soon!' : 'Register Now'}</span>
-        {!isPlaceholder && <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-200" />}
-      </button>
+      {!isCompleted && (
+        <button 
+          onClick={handleRegisterClick}
+          disabled={isPlaceholder}
+          className={`w-full py-3 px-6 rounded-xl font-semibold transition-all duration-300 flex items-center justify-center space-x-2 group ${
+            isPlaceholder 
+              ? 'bg-gray-600 text-gray-300 cursor-not-allowed' 
+              : 'bg-gradient-to-r from-cyan-500 to-blue-600 text-white hover:from-cyan-600 hover:to-blue-700'
+          }`}
+        >
+          <span>{isPlaceholder ? 'Registrations opening soon!' : 'Register Now'}</span>
+          {!isPlaceholder && <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-200" />}
+        </button>
+      )}
     </div>
   );
 };
