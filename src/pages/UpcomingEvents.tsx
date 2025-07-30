@@ -1,5 +1,6 @@
 import React from 'react';
 import EventCard from '../components/EventCard';
+import SpecialEventCard from '../components/SpecialEventCard';
 import { Calendar, Clock, Users } from 'lucide-react';
 import { useScrollAnimation } from '../hooks/useScrollAnimation';
 
@@ -56,14 +57,13 @@ const UpcomingEvents: React.FC = () => {
               </h3>
             </div>
             <div className="flex justify-center px-4">
-              <EventCard 
-                event={{
-                  sessionNumber: 2,
-                  date: "To be announced",
-                  venue: "To be announced",
-                  time: "To be announced",
-                  agenda: "Stay tuned for more exciting sessions coming your way!"
-                }} 
+              <SpecialEventCard 
+                sessionNumber={2}
+                date="3rd August, 2025"
+                venue="Herkley's turf, Peelamedu, Coimbatore"
+                time="Batch-1: 6:00-8:00 AM | Batch-2: 7:00-9:00 AM"
+                agenda="Batch-1: 6:00 AM - Assemble • 6:15-6:30 AM - Warm-up • 6:30-7:30 AM - Badminton • 7:30-8:00 AM - Warm-down and Socialize • • • • • • • Batch-2: 7:00 AM - Assemble • 7:15-7:30 AM - Warm-up • 7:30-8:30 AM - Badminton • 8:30-9:00 AM - Warm-down and Socialize • • • • • • • **NOTE: Turf fee applicable (Rs.50 - Rs.100 per person)**"
+                isCompleted={false}
               />
             </div>
           </div>
