@@ -29,22 +29,22 @@ const SpecialEventCard: React.FC<SpecialEventCardProps> = ({
     <div className={`w-full max-w-lg md:max-w-xl lg:w-[32rem] h-auto md:h-[700px] bg-neutral-800 rounded-3xl text-neutral-300 p-4 md:p-6 flex flex-col items-start justify-center gap-4 hover:bg-gray-900 hover:shadow-2xl transition-all duration-300 transform hover:scale-105 mx-auto ${
       isCompleted ? 'hover:shadow-green-400' : 'hover:shadow-cyan-400'
     }`}>
-      <div className="w-full h-[24rem] md:h-[32rem] bg-cyan-300 rounded-2xl overflow-hidden relative">
+      <div className="w-full h-[26rem] md:h-[34rem] bg-cyan-300 rounded-2xl overflow-hidden relative">
         {isCompleted && (
           <div className="absolute top-2 right-2 bg-gradient-to-r from-green-500 to-emerald-600 px-3 py-1 rounded-full z-10">
             <span className="text-white text-xs font-semibold">COMPLETED</span>
           </div>
         )}
         <img 
-          src={isCompleted ? "/images/zone2.png" : "/images/turf.png"} 
-          alt={isCompleted ? "Zone-2 Race Course" : "Herkley's Turf"} 
+          src={isCompleted ? "/images/zone2.png" : "/images/court.jpeg"} 
+          alt={isCompleted ? "Zone-2 Race Course" : "Badminton Court"} 
           className="w-full h-full object-cover"
           onError={(e) => {
             console.error('Image failed to load from public directory');
             (e.target as HTMLImageElement).style.display = 'none';
             (e.target as HTMLImageElement).parentElement!.innerHTML = `
               <div class="w-full h-full flex items-center justify-center bg-gradient-to-br from-cyan-400 to-blue-500 text-gray-800 font-bold text-lg">
-                ${isCompleted ? "Zone-2 Race Course" : "Herkley's Turf"}
+                ${isCompleted ? "Zone-2 Race Course" : "Badminton Court"}
               </div>
             `;
           }}
