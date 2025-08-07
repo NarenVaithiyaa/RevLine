@@ -129,3 +129,15 @@ const handleRegisterClick = () => {
 🔄 **Next: Replace YOUR_FORM_ID with your actual Google Form URL**
 
 Your registration system is now ready to use Google Forms!
+
+Session - 3
+[06/08, 8:04 pm] Niki: Trekking Agenda: Ponnuuthu Amman Temple
+
+🕔 5:30 AM – Meetup at Peelamedu Pazhamudhir
+🕕 6:00 AM – Start from Peelamedu Pazhamudhir to Ponnuuthu Amman Temple
+🕡 6:30 AM – Begin Trekking
+🕖 7:00 AM – Reach Temple and begin descent
+🕢 7:30 AM – Reach Foothills
+🕗 8:00 AM – Reach back to Peelamedu Pazhamudhir
+[06/08, 8:05 pm] Niki: Mention:
+"Those who can come to Ponnuuthu Amman Temple directly by car can do so. Those coming on two-wheelers will be picked up at Peelamedu Pazhamudhir."
