@@ -1,5 +1,5 @@
 import React from 'react';
-import { Calendar, MapPin, Clock, Target, ArrowRight } from 'lucide-react';
+import { Calendar, MapPin, Clock, Target } from 'lucide-react';
 
 interface Event {
   sessionNumber: number;
@@ -15,19 +15,6 @@ interface EventCardProps {
 }
 
 const EventCard: React.FC<EventCardProps> = ({ event, isCompleted = false }) => {
-  // Google Form URL - replace with your actual Google Form URL
-  const GOOGLE_FORM_URL = "#";
-
-  // Check if this is a placeholder event (to be announced)
-  const isPlaceholder = event.date === "To be announced" || event.venue === "To be announced";
-
-  const handleRegisterClick = () => {
-    if (!isPlaceholder) {
-      // Open Google Form in a new tab
-      window.open(GOOGLE_FORM_URL, '_blank');
-    }
-  };
-
   return (
     <div className="w-full max-w-sm md:max-w-md lg:max-w-lg mx-auto bg-gradient-to-br from-gray-800 to-gray-700 rounded-2xl p-4 md:p-6 shadow-2xl hover:shadow-cyan-500/20 transition-all duration-300 transform hover:scale-105 border border-gray-600 hover:border-cyan-500/50">
       {/* Session Header */}
@@ -80,22 +67,6 @@ const EventCard: React.FC<EventCardProps> = ({ event, isCompleted = false }) => 
           </div>
         </div>
       </div>
-
-      {/* Registration Button */}
-      {!isCompleted && (
-        <button 
-          onClick={handleRegisterClick}
-          disabled={isPlaceholder}
-          className={`w-full py-3 px-6 rounded-xl font-semibold transition-all duration-300 flex items-center justify-center space-x-2 group ${
-            isPlaceholder 
-              ? 'bg-gray-600 text-gray-300 cursor-not-allowed' 
-              : 'bg-gradient-to-r from-cyan-500 to-blue-600 text-white hover:from-cyan-600 hover:to-blue-700'
-          }`}
-        >
-          <span>{isPlaceholder ? 'Registrations opening soon!' : 'Register Now'}</span>
-          {!isPlaceholder && <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-200" />}
-        </button>
-      )}
     </div>
   );
 };

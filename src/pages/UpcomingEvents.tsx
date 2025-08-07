@@ -37,8 +37,8 @@ const UpcomingEvents: React.FC = () => {
           </div>
           <div className="bg-gradient-to-br from-gray-800 to-gray-700 p-6 rounded-xl text-center scale-in stagger-2">
             <Calendar className="w-12 h-12 text-cyan-400 mx-auto mb-3" />
-            <div className="text-3xl font-bold text-white mb-2">3</div>
-            <div className="text-gray-300">Sessions This Month</div>
+            <div className="text-3xl font-bold text-white mb-2">4+</div>
+            <div className="text-gray-300">Sessions Planned</div>
           </div>
           <div className="bg-gradient-to-br from-gray-800 to-gray-700 p-6 rounded-xl text-center scale-in stagger-3">
             <Clock className="w-12 h-12 text-cyan-400 mx-auto mb-3" />
@@ -58,11 +58,11 @@ const UpcomingEvents: React.FC = () => {
             </div>
             <div className="flex justify-center px-4">
               <SpecialEventCard 
-                sessionNumber={2}
-                date="3rd August, 2025"
-                venue="Herkley's turf, Peelamedu, Coimbatore"
-                time="Batch-1: 6:00-8:00 AM | Batch-2: 7:00-9:00 AM"
-                agenda="Batch-1: 6:00 AM - Assemble • 6:15-6:30 AM - Warm-up • 6:30-7:30 AM - Badminton • 7:30-8:00 AM - Warm-down and Socialize • • • • • • • Batch-2: 7:00 AM - Assemble • 7:15-7:30 AM - Warm-up • 7:30-8:30 AM - Badminton • 8:30-9:00 AM - Warm-down and Socialize • • • • • • • **NOTE: Turf fee applicable (Rs.50 - Rs.100 per person)**"
+                sessionNumber={3}
+                date="6th August, 2025"
+                venue="Ponnuuthu Amman Temple"
+                time="5:30 AM - 8:00 AM"
+                agenda="Trekking Agenda: • 🕔 5:30 AM – Meetup at Peelamedu Pazhamudhir • 🕕 6:00 AM – Start from Peelamedu Pazhamudhir to Ponnuuthu Amman Temple • 🕡 6:30 AM – Begin Trekking • 🕖 7:00 AM – Reach Temple and begin descent • 🕢 7:30 AM – Reach Foothills • 🕗 8:00 AM – Reach back to Peelamedu Pazhamudhir • • **NOTE: Those who can come to Ponnuuthu Amman Temple directly by car can do so. Those coming on two-wheelers will be picked up at Peelamedu Pazhamudhir.**"
                 isCompleted={false}
               />
             </div>
@@ -75,16 +75,29 @@ const UpcomingEvents: React.FC = () => {
                 More <span className="text-cyan-400">Sessions</span>
               </h3>
             </div>
-            <div className="flex justify-center px-4">
-              <EventCard 
-                event={{
-                  sessionNumber: 3,
-                  date: "To be announced",
-                  venue: "To be announced",
-                  time: "To be announced",
-                  agenda: "Stay tuned for more exciting sessions coming your way!"
-                }} 
-              />
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 px-4 max-w-6xl mx-auto">
+              <div className="flex justify-center">
+                <EventCard 
+                  event={{
+                    sessionNumber: 4,
+                    date: "To be announced",
+                    venue: "To be announced",
+                    time: "To be announced",
+                    agenda: "Stay tuned for more exciting sessions coming your way!"
+                  }} 
+                />
+              </div>
+              <div className="flex justify-center">
+                <EventCard 
+                  event={{
+                    sessionNumber: 5,
+                    date: "To be announced",
+                    venue: "To be announced",
+                    time: "To be announced",
+                    agenda: "More adventures await! Keep following for updates."
+                  }} 
+                />
+              </div>
             </div>
           </div>
         </div>
