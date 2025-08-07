@@ -19,7 +19,7 @@ const SpecialEventCard: React.FC<SpecialEventCardProps> = ({
   isCompleted = false
 }) => {
   // Google Form URL - replace with your actual Google Form URL
-  const GOOGLE_FORM_URL = "https://forms.gle/nNZMV4qEXW6W8xDWA";
+  const GOOGLE_FORM_URL = "https://forms.gle/gFjSTGZXKACFz6iR7";
 
   const handleRegisterClick = () => {
     // Open Google Form in a new tab
