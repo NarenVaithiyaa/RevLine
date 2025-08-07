@@ -59,7 +59,7 @@ const UpcomingEvents: React.FC = () => {
             <div className="flex justify-center px-4">
               <SpecialEventCard 
                 sessionNumber={3}
-                date="6th August, 2025"
+                date="10th August, 2025"
                 venue="Ponnuuthu Amman Temple"
                 time="5:30 AM - 8:00 AM"
                 agenda="Trekking Agenda: • 🕔 5:30 AM – Meetup at Peelamedu Pazhamudhir • 🕕 6:00 AM – Start from Peelamedu Pazhamudhir to Ponnuuthu Amman Temple • 🕡 6:30 AM – Begin Trekking • 🕖 7:00 AM – Reach Temple and begin descent • 🕢 7:30 AM – Reach Foothills • 🕗 8:00 AM – Reach back to Peelamedu Pazhamudhir • • **NOTE: Those who can come to Ponnuuthu Amman Temple directly by car can do so. Those coming on two-wheelers will be picked up at Peelamedu Pazhamudhir.**"
