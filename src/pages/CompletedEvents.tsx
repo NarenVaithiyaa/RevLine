@@ -56,7 +56,15 @@ const CompletedEvents: React.FC = () => {
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
             Event Media <span className="text-cyan-400">Archive</span>
           </h2>
-          <p className="text-xl text-gray-300">Coming Soon</p>
+          <p className="text-xl text-gray-300 mb-6">View the session's magic moments below :</p>
+          <a 
+            href="https://drive.google.com/drive/folders/1YVN2QCYQJJ092nqE228khA_Fe4mHZa0f" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="inline-block bg-gradient-to-r from-cyan-400 to-blue-500 text-white px-6 py-3 rounded-lg font-semibold hover:from-cyan-500 hover:to-blue-600 transition-all duration-300 transform hover:scale-105"
+          >
+            📸 View Photos & Videos
+          </a>
         </div>
       </div>
     </div>
