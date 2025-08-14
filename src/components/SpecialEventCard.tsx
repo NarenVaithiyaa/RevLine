@@ -19,7 +19,7 @@ const SpecialEventCard: React.FC<SpecialEventCardProps> = ({
   isCompleted = false
 }) => {
   // Google Form URL - replace with your actual Google Form URL
-  const GOOGLE_FORM_URL = "https://forms.gle/gFjSTGZXKACFz6iR7";
+  const GOOGLE_FORM_URL = "https://forms.gle/5dwXv5HKobiRWN3Y8";
 
   const handleRegisterClick = () => {
     // Open Google Form in a new tab
@@ -27,23 +27,23 @@ const SpecialEventCard: React.FC<SpecialEventCardProps> = ({
   };
 
   return (
-    <div className={`w-full max-w-lg md:max-w-xl lg:w-[32rem] h-auto bg-neutral-800 rounded-3xl text-neutral-300 p-4 md:p-6 flex flex-col items-start justify-center gap-4 hover:bg-gray-900 hover:shadow-2xl transition-all duration-300 transform hover:scale-105 mx-auto ${
+    <div className={`w-full max-w-lg md:max-w-xl lg:w-[32rem] ${isCompleted ? 'min-h-[150px]' : 'min-h-[320px]'} bg-neutral-800 rounded-3xl text-neutral-300 p-4 md:p-6 flex flex-col items-start justify-center gap-4 hover:bg-gray-900 hover:shadow-2xl transition-all duration-300 transform hover:scale-105 mx-auto ${
       isCompleted ? 'hover:shadow-green-400' : 'hover:shadow-cyan-400'
     }`}>
       
-      {/* Image Section for Session 3 */}
-      {sessionNumber === 3 && (
-        <div className="w-full h-[16rem] md:h-[18rem] rounded-2xl overflow-hidden mb-4">
+      {/* Image Section for Session 4 (Featured Event) */}
+      {sessionNumber === 4 && !isCompleted && (
+        <div className="w-full h-[12rem] md:h-[14rem] rounded-2xl overflow-hidden mb-4">
           <img 
-            src="/images/ponnuthu_amman.jpg" 
-            alt="Ponnuthu Amman Temple" 
+            src="https://content3.jdmagicbox.com/v2/comp/coimbatore/a6/0422px422.x422.190814132155.j3a6/catalogue/prs-ground-p-n-palayam-coimbatore-sports-ground-RUL7trBSGZ.jpg" 
+            alt="PRS Ground" 
             className="w-full h-full object-cover"
             onError={(e) => {
               console.error('Image failed to load from:', (e.target as HTMLImageElement).src);
               (e.target as HTMLImageElement).style.display = 'none';
               (e.target as HTMLImageElement).parentElement!.innerHTML = `
-                <div class="w-full h-full flex items-center justify-center bg-gradient-to-br from-cyan-400 to-blue-500 text-gray-800 font-bold text-lg rounded-2xl">
-                  Ponnuthu Amman Temple (Image not found)
+                <div class="w-full h-full flex items-center justify-center bg-gradient-to-br from-cyan-400 to-blue-500 text-white font-bold text-lg rounded-2xl">
+                  📸 PRS Ground
                 </div>
               `;
             }}
@@ -69,9 +69,9 @@ const SpecialEventCard: React.FC<SpecialEventCardProps> = ({
         <div className="space-y-2 text-sm mb-3">
           <p className="text-cyan-400 font-semibold">📅 {date}</p>
           <p className="text-gray-300">📍 {venue}</p>
-          <p className="text-gray-300">⏰ {time}</p>
+          {!isCompleted && <p className="text-gray-300">⏰ {time}</p>}
         </div>
-        {agenda && (
+        {agenda && !isCompleted && (
           <div className="mt-3">
             <p className="text-cyan-400 font-semibold text-sm mb-2">🎯 Agenda:</p>
             <div className="text-gray-300 text-sm leading-relaxed">

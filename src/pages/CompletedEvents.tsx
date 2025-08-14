@@ -27,7 +27,7 @@ const CompletedEvents: React.FC = () => {
 
         {/* Completed Events */}
         <div className="mb-16">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 px-4 max-w-6xl mx-auto">
+          <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-8 px-4 max-w-7xl mx-auto">
             <div className="flex justify-center">
               <SpecialEventCard 
                 sessionNumber={1}
@@ -45,6 +45,16 @@ const CompletedEvents: React.FC = () => {
                 venue="Herkley's turf, Peelamedu, Coimbatore"
                 time="Batch-1: 6:00-8:00 AM | Batch-2: 7:00-9:00 AM"
                 agenda="Batch-1: 6:00 AM - Assemble • 6:15-6:30 AM - Warm-up • 6:30-7:30 AM - Badminton • 7:30-8:00 AM - Warm-down and Socialize • • • • • • • Batch-2: 7:00 AM - Assemble • 7:15-7:30 AM - Warm-up • 7:30-8:30 AM - Badminton • 8:30-9:00 AM - Warm-down and Socialize • • • • • • • **NOTE: Turf fee applicable (Rs.50 - Rs.100 per person)**"
+                isCompleted={true}
+              />
+            </div>
+            <div className="flex justify-center">
+              <SpecialEventCard 
+                sessionNumber={3}
+                date="10th August, 2025"
+                venue="Ponnuuthu Amman Temple"
+                time="5:30 AM - 8:00 AM"
+                agenda="Trekking Agenda: • 🕔 5:30 AM – Meetup at Peelamedu Pazhamudhir • 🕕 6:00 AM – Start from Peelamedu Pazhamudhir to Ponnuuthu Amman Temple • 🕡 6:30 AM – Begin Trekking • 🕖 7:00 AM – Reach Temple and begin descent • 🕢 7:30 AM – Reach Foothills • 🕗 8:00 AM – Reach back to Peelamedu Pazhamudhir • • **NOTE: Those who can come to Ponnuuthu Amman Temple directly by car can do so. Those coming on two-wheelers will be picked up at Peelamedu Pazhamudhir.**"
                 isCompleted={true}
               />
             </div>
