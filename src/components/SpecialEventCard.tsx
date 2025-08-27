@@ -19,7 +19,7 @@ const SpecialEventCard: React.FC<SpecialEventCardProps> = ({
   isCompleted = false
 }) => {
   // Google Form URL - replace with your actual Google Form URL
-  const GOOGLE_FORM_URL = "https://forms.gle/EA5kRq2gKDWhZeZA7";
+  const GOOGLE_FORM_URL = "#";
 
   const handleRegisterClick = () => {
     // Open Google Form in a new tab
@@ -123,7 +123,7 @@ const SpecialEventCard: React.FC<SpecialEventCardProps> = ({
           onClick={handleRegisterClick}
           className="w-full bg-gradient-to-r from-cyan-500 to-blue-600 font-extrabold py-3 px-6 rounded-xl hover:from-cyan-600 hover:to-blue-700 transition-all duration-300 text-white flex items-center justify-center space-x-2 group"
         >
-          <span>Register Now</span>
+          <span>Registrations Opening Soon!</span>
           <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-200" />
         </button>
       )}
