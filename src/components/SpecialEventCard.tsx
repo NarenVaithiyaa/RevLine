@@ -143,7 +143,7 @@ const SpecialEventCard: React.FC<SpecialEventCardProps> = ({
           onClick={handleRegisterClick}
           className="w-full bg-gradient-to-r from-cyan-500 to-blue-600 font-extrabold py-3 px-6 rounded-xl hover:from-cyan-600 hover:to-blue-700 transition-all duration-300 text-white flex items-center justify-center space-x-2 group"
         >
-          <span>Registrations Opening Soon!</span>
+          <span>Register Now</span>
           <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-200" />
         </button>
       )}
