@@ -78,6 +78,16 @@ const CompletedEvents: React.FC = () => {
                 isCompleted={true}
               />
             </div>
+            <div className="flex justify-center">
+              <SpecialEventCard 
+                sessionNumber={6}
+                date="31st August, 2025"
+                venue="Herkley's turf, Peelamedu, Coimbatore"
+                time="6:00 AM - 8:00 AM"
+                agenda="6:00 - 6:30 AM: Warm up • 6:30 - 7:30 AM: Badminton • 7:30 - 8:00 AM: Warm down/Socialize"
+                isCompleted={true}
+              />
+            </div>
           </div>
         </div>
 
