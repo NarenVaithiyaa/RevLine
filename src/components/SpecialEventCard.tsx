@@ -19,7 +19,7 @@ const SpecialEventCard: React.FC<SpecialEventCardProps> = ({
   isCompleted = false
 }) => {
   // Google Form URL - replace with your actual Google Form URL
-  const GOOGLE_FORM_URL = "https://forms.gle/TioEh7PHKV2EzwF68";
+  const GOOGLE_FORM_URL = "#";
 
   const handleRegisterClick = () => {
     // Open Google Form in a new tab
@@ -139,13 +139,21 @@ const SpecialEventCard: React.FC<SpecialEventCardProps> = ({
       
       {/* Register Button - Only show for upcoming events */}
       {!isCompleted && (
-        <button 
-          onClick={handleRegisterClick}
-          className="w-full bg-gradient-to-r from-cyan-500 to-blue-600 font-extrabold py-3 px-6 rounded-xl hover:from-cyan-600 hover:to-blue-700 transition-all duration-300 text-white flex items-center justify-center space-x-2 group"
-        >
-          <span>Register Now</span>
-          <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-200" />
-        </button>
+        <>
+          {sessionNumber === 9 ? (
+            <div className="w-full bg-gradient-to-r from-gray-600 to-gray-700 font-extrabold py-3 px-6 rounded-xl text-white flex items-center justify-center">
+              <span>Registrations opening soon !</span>
+            </div>
+          ) : (
+            <button 
+              onClick={handleRegisterClick}
+              className="w-full bg-gradient-to-r from-cyan-500 to-blue-600 font-extrabold py-3 px-6 rounded-xl hover:from-cyan-600 hover:to-blue-700 transition-all duration-300 text-white flex items-center justify-center space-x-2 group"
+            >
+              <span>Register Now</span>
+              <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-200" />
+            </button>
+          )}
+        </>
       )}
     </div>
   );
