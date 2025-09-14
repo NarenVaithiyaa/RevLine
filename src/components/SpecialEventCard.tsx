@@ -91,6 +91,26 @@ const SpecialEventCard: React.FC<SpecialEventCardProps> = ({
         </div>
       )}
 
+      {/* Image Section for Session 8 (Featured Event) */}
+      {sessionNumber === 8 && !isCompleted && (
+        <div className="w-full h-[12rem] md:h-[14rem] rounded-2xl overflow-hidden mb-4">
+          <img 
+            src="/images/turf.png" 
+            alt="Herkley's turf" 
+            className="w-full h-full object-cover"
+            onError={(e) => {
+              console.error('Image failed to load from:', (e.target as HTMLImageElement).src);
+              (e.target as HTMLImageElement).style.display = 'none';
+              (e.target as HTMLImageElement).parentElement!.innerHTML = `
+                <div class="w-full h-full flex items-center justify-center bg-gradient-to-br from-cyan-400 to-blue-500 text-white font-bold text-lg rounded-2xl">
+                  📸 Herkley's turf
+                </div>
+              `;
+            }}
+          />
+        </div>
+      )}
+
       <div className="flex-1 w-full">
         {/* Session Header with Status */}
         <div className="flex items-center justify-between mb-4">
