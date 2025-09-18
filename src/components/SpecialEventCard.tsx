@@ -19,7 +19,7 @@ const SpecialEventCard: React.FC<SpecialEventCardProps> = ({
   isCompleted = false
 }) => {
   // Google Form URL - replace with your actual Google Form URL
-  const GOOGLE_FORM_URL = "#";
+  const GOOGLE_FORM_URL = "https://forms.gle/kBwnNdUagrkXV69v9";
 
   const handleRegisterClick = () => {
     // Open Google Form in a new tab
@@ -91,6 +91,26 @@ const SpecialEventCard: React.FC<SpecialEventCardProps> = ({
         </div>
       )}
 
+      {/* Image Section for Session 9 (Featured Event) */}
+      {sessionNumber === 9 && !isCompleted && (
+        <div className="w-full h-[12rem] md:h-[14rem] rounded-2xl overflow-hidden mb-4">
+          <img 
+            src="/images/prscbe.jpg" 
+            alt="PRS Ground - RevLine x Tez Run" 
+            className="w-full h-full object-cover"
+            onError={(e) => {
+              console.error('Image failed to load from:', (e.target as HTMLImageElement).src);
+              (e.target as HTMLImageElement).style.display = 'none';
+              (e.target as HTMLImageElement).parentElement!.innerHTML = `
+                <div class="w-full h-full flex items-center justify-center bg-gradient-to-br from-cyan-400 to-blue-500 text-white font-bold text-lg rounded-2xl">
+                  📸 PRS Ground
+                </div>
+              `;
+            }}
+          />
+        </div>
+      )}
+
       {/* Image Section for Session 8 (Featured Event) */}
       {sessionNumber === 8 && !isCompleted && (
         <div className="w-full h-[12rem] md:h-[14rem] rounded-2xl overflow-hidden mb-4">
@@ -126,6 +146,24 @@ const SpecialEventCard: React.FC<SpecialEventCardProps> = ({
           </div>
         </div>
         
+        {/* Collaboration logo for Session 10 */}
+        {sessionNumber === 9 && !isCompleted && (
+          <div className="text-center mb-4">
+            <img 
+              src="/images/collab.png" 
+              alt="RevLine x Tez Run Collaboration" 
+              className="mx-auto h-8 md:h-12 w-auto"
+              onError={(e) => {
+                console.error('Collaboration image failed to load from:', (e.target as HTMLImageElement).src);
+                (e.target as HTMLImageElement).style.display = 'none';
+                (e.target as HTMLImageElement).parentElement!.innerHTML = `
+                  <p class="text-white font-bold text-2xl">RevLine x Tez Run</p>
+                `;
+              }}
+            />
+          </div>
+        )}
+        
         <div className="space-y-2 text-sm mb-3">
           <p className="text-cyan-400 font-semibold">📅 {date}</p>
           <p className="text-gray-300">📍 {venue}</p>
@@ -159,21 +197,13 @@ const SpecialEventCard: React.FC<SpecialEventCardProps> = ({
       
       {/* Register Button - Only show for upcoming events */}
       {!isCompleted && (
-        <>
-          {sessionNumber === 9 ? (
-            <div className="w-full bg-gradient-to-r from-gray-600 to-gray-700 font-extrabold py-3 px-6 rounded-xl text-white flex items-center justify-center">
-              <span>Registrations opening soon !</span>
-            </div>
-          ) : (
-            <button 
-              onClick={handleRegisterClick}
-              className="w-full bg-gradient-to-r from-cyan-500 to-blue-600 font-extrabold py-3 px-6 rounded-xl hover:from-cyan-600 hover:to-blue-700 transition-all duration-300 text-white flex items-center justify-center space-x-2 group"
-            >
-              <span>Register Now</span>
-              <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-200" />
-            </button>
-          )}
-        </>
+        <button 
+          onClick={handleRegisterClick}
+          className="w-full bg-gradient-to-r from-cyan-500 to-blue-600 font-extrabold py-3 px-6 rounded-xl hover:from-cyan-600 hover:to-blue-700 transition-all duration-300 text-white flex items-center justify-center space-x-2 group"
+        >
+          <span>Register Now</span>
+          <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-200" />
+        </button>
       )}
     </div>
   );

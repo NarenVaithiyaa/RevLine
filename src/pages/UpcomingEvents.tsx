@@ -59,10 +59,10 @@ const UpcomingEvents: React.FC = () => {
             <div className="flex justify-center px-4">
               <SpecialEventCard 
                 sessionNumber={9}
-                date="To be announced"
-                venue="To be announced"
-                time="To be announced"
-                agenda="Stay tuned for more exciting sessions coming your way!"
+                date="21st September, 2025"
+                venue="PRS Ground"
+                time="7:00 - 10:00 AM"
+                agenda="7:00 AM - Assemble at PRS Ground • 7:15 AM - Warm up and start run • 8:00 AM - Fun games"
                 isCompleted={false}
               />
             </div>
