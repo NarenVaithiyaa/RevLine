@@ -60,7 +60,7 @@ const UpcomingEvents: React.FC = () => {
               <SpecialEventCard 
                 sessionNumber={10}
                 date="28th September, 2025"
-                venue="Herkley's turf, Peelamedu, Coimbatore"
+                venue="TIFO turf, Coimbatore"
                 time="7:00 AM - 10:00 AM"
                 agenda="7:00 - 8:00 AM: Ice breaker session • 8:00 - 10:00 AM: Kho-kho in turf • 8:00 - 9:00 AM: Badminton • 9:00 - 10:00 AM: Pickle ball"
                 isCompleted={false}
