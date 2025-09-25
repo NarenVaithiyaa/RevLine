@@ -30,6 +30,16 @@ const CompletedEvents: React.FC = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-8 px-4 max-w-7xl mx-auto">
             <div className="flex justify-center">
               <SpecialEventCard 
+                sessionNumber={9}
+                date="21st September, 2025"
+                venue="PRS Ground"
+                time="7:00 - 10:00 AM"
+                agenda="7:00 AM - Assemble at PRS Ground • 7:15 AM - Warm up and start run • 8:00 AM - Fun games"
+                isCompleted={true}
+              />
+            </div>
+            <div className="flex justify-center">
+              <SpecialEventCard 
                 sessionNumber={1}
                 date="27th July, 2025"
                 venue="Zone-2, Race course, Coimbatore"
@@ -111,8 +121,8 @@ const CompletedEvents: React.FC = () => {
             <div className="flex justify-center">
               <SpecialEventCard 
                 sessionNumber={9}
-                date="To be announced"
-                venue="To be announced"
+                date="21st September, 2025"
+                venue="PRS Ground"
                 time=""
                 agenda=""
                 isCompleted={true}
