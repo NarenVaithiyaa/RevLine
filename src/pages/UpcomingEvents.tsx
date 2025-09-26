@@ -62,7 +62,7 @@ const UpcomingEvents: React.FC = () => {
                 date="28th September, 2025"
                 venue="TIFO turf, Coimbatore"
                 time="7:00 AM - 10:00 AM"
-                agenda="7:00 - 8:00 AM: Ice breaker session • 8:00 - 10:00 AM: Kho-kho in turf • 8:00 - 9:00 AM: Badminton • 9:00 - 10:00 AM: Pickle ball"
+                agenda="6:30 AM: Warm-up & Ice breaker session • 7:00 AM: Frisbee • 8:30 AM: Cricket • 9:45 AM: Warm down • NOTE : Turf fee applicable"
                 isCompleted={false}
               />
             </div>
