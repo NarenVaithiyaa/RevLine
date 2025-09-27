@@ -27,7 +27,7 @@ const Crew: React.FC = () => {
         {/* Team Cards */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-6">
           {/* Card 1 */}
-          <div className="bg-gray-800 rounded-lg overflow-hidden shadow-lg relative">
+          <div className="bg-gray-800 rounded-lg overflow-hidden shadow-lg relative transform transition-transform duration-300 hover:scale-105 cursor-pointer">
             <div className="aspect-square">
               <img src="/crew_images/nikileshh.jpg" alt="Nikileshh S" className="w-full h-full object-cover" />
             </div>
@@ -37,7 +37,7 @@ const Crew: React.FC = () => {
           </div>
 
           {/* Card 2 */}
-          <div className="bg-gray-800 rounded-lg overflow-hidden shadow-lg relative">
+          <div className="bg-gray-800 rounded-lg overflow-hidden shadow-lg relative transform transition-transform duration-300 hover:scale-105 cursor-pointer">
             <div className="aspect-square">
               <img src="/crew_images/rohith_dharshan.jpg" alt="Rohith Dharshan M" className="w-full h-full object-cover" />
             </div>
@@ -47,7 +47,7 @@ const Crew: React.FC = () => {
           </div>
 
           {/* Card 3 */}
-          <div className="bg-gray-800 rounded-lg overflow-hidden shadow-lg relative">
+          <div className="bg-gray-800 rounded-lg overflow-hidden shadow-lg relative transform transition-transform duration-300 hover:scale-105 cursor-pointer">
             <div className="aspect-square">
               <img src="/crew_images/sanjeev.jpg" alt="Sanjeev Muthusamy" className="w-full h-full object-cover" />
             </div>
@@ -57,7 +57,7 @@ const Crew: React.FC = () => {
           </div>
 
           {/* Card 4 */}
-          <div className="bg-gray-800 rounded-lg overflow-hidden shadow-lg relative">
+          <div className="bg-gray-800 rounded-lg overflow-hidden shadow-lg relative transform transition-transform duration-300 hover:scale-105 cursor-pointer">
             <div className="aspect-square">
               <img src="/crew_images/madhumitha.jpg" alt="Madhumitha B" className="w-full h-full object-cover" />
             </div>
@@ -67,7 +67,7 @@ const Crew: React.FC = () => {
           </div>
 
           {/* Card 5 */}
-          <div className="bg-gray-800 rounded-lg overflow-hidden shadow-lg relative">
+          <div className="bg-gray-800 rounded-lg overflow-hidden shadow-lg relative transform transition-transform duration-300 hover:scale-105 cursor-pointer">
             <div className="aspect-square">
               <img src="/crew_images/logini.jpg" alt="Logini T S" className="w-full h-full object-cover" />
             </div>
@@ -77,7 +77,7 @@ const Crew: React.FC = () => {
           </div>
 
           {/* Card 6 */}
-          <div className="bg-gray-800 rounded-lg overflow-hidden shadow-lg relative">
+          <div className="bg-gray-800 rounded-lg overflow-hidden shadow-lg relative transform transition-transform duration-300 hover:scale-105 cursor-pointer">
             <div className="aspect-square">
               <img src="/crew_images/karthik_saravanan.jpg" alt="Karthik Saravanan" className="w-full h-full object-cover" />
             </div>
@@ -87,7 +87,7 @@ const Crew: React.FC = () => {
           </div>
 
           {/* Card 7 */}
-          <div className="bg-gray-800 rounded-lg overflow-hidden shadow-lg relative">
+          <div className="bg-gray-800 rounded-lg overflow-hidden shadow-lg relative transform transition-transform duration-300 hover:scale-105 cursor-pointer">
             <div className="aspect-square">
               <img src="/crew_images/Suresh.jpg" alt="Suresh" className="w-full h-full object-cover" />
             </div>
@@ -97,7 +97,7 @@ const Crew: React.FC = () => {
           </div>
 
           {/* Card 8 */}
-          <div className="bg-gray-800 rounded-lg overflow-hidden shadow-lg relative">
+          <div className="bg-gray-800 rounded-lg overflow-hidden shadow-lg relative transform transition-transform duration-300 hover:scale-105 cursor-pointer">
             <div className="aspect-square">
               <img src="/crew_images/aakash_bala.jpg" alt="Aakash Bala" className="w-full h-full object-cover" />
             </div>
@@ -107,7 +107,7 @@ const Crew: React.FC = () => {
           </div>
 
           {/* Card 9 */}
-          <div className="bg-gray-800 rounded-lg overflow-hidden shadow-lg relative">
+          <div className="bg-gray-800 rounded-lg overflow-hidden shadow-lg relative transform transition-transform duration-300 hover:scale-105 cursor-pointer">
             <div className="aspect-square">
               <img src="/crew_images/soorya.jpg" alt="Soorya G" className="w-full h-full object-cover" />
             </div>
@@ -117,7 +117,7 @@ const Crew: React.FC = () => {
           </div>
 
           {/* Card 10 */}
-          <div className="bg-gray-800 rounded-lg overflow-hidden shadow-lg relative">
+          <div className="bg-gray-800 rounded-lg overflow-hidden shadow-lg relative transform transition-transform duration-300 hover:scale-105 cursor-pointer">
             <div className="aspect-square">
               <img src="/crew_images/naren.jpg" alt="Naren Vaithiyaa G" className="w-full h-full object-cover" />
             </div>
