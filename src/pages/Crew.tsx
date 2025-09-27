@@ -1,12 +1,9 @@
 import React from 'react';
-import { Users, Heart, Zap, Award } from 'lucide-react';
+import { Users } from 'lucide-react';
 import { useScrollAnimation } from '../hooks/useScrollAnimation';
 
 const Crew: React.FC = () => {
   const headerRef = useScrollAnimation();
-  const comingSoonRef = useScrollAnimation();
-  const valuesRef = useScrollAnimation();
-  const teamRef = useScrollAnimation();
 
   return (
     <div className="min-h-screen bg-gray-900 py-20">
@@ -27,65 +24,107 @@ const Crew: React.FC = () => {
           </p>
         </div>
 
-        {/* Coming Soon Section */}
-        <div ref={comingSoonRef} className="bg-gradient-to-br from-gray-800 to-gray-700 rounded-2xl p-12 text-center shadow-2xl mb-16 scale-in">
-          <div className="max-w-2xl mx-auto">
-            <div className="bg-gradient-to-r from-cyan-500 to-blue-600 p-4 rounded-full w-20 h-20 mx-auto mb-8 flex items-center justify-center">
-              <Heart className="w-10 h-10 text-white" />
+        {/* Team Cards */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-6">
+          {/* Card 1 */}
+          <div className="bg-gray-800 rounded-lg overflow-hidden shadow-lg relative">
+            <div className="aspect-square">
+              <img src="/crew_images/nikileshh.jpg" alt="Nikileshh S" className="w-full h-full object-cover" />
             </div>
-            <h2 className="text-3xl font-bold text-white mb-6">
-              Meet the Team
-            </h2>
-            <p className="text-xl text-gray-300 mb-8 leading-relaxed">
-              Our amazing crew profiles are being prepared. Get ready to meet the inspiring trainers, 
-              dedicated organizers, and community champions who make every RevLine session unforgettable.
-            </p>
-            <div className="inline-flex items-center space-x-2 bg-cyan-500/20 px-6 py-3 rounded-full">
-              <Zap className="w-5 h-5 text-cyan-400" />
-              <span className="text-cyan-400 font-semibold">Coming Soon</span>
+            <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-blue-900/60 via-black/50 to-transparent p-4">
+              <h3 className="text-white font-semibold text-lg text-center">Nikileshh S</h3>
             </div>
           </div>
-        </div>
 
-        {/* Community Values */}
-        <div ref={valuesRef} className="grid md:grid-cols-3 gap-8 mb-16 fade-left">
-          <div className="bg-gradient-to-br from-blue-900 to-blue-800 p-8 rounded-2xl text-center scale-in stagger-1">
-            <Users className="w-12 h-12 text-cyan-400 mx-auto mb-4" />
-            <h3 className="text-xl font-bold text-white mb-3">Unity</h3>
-            <p className="text-gray-200">
-              We believe in the power of community. Together, we achieve more than we ever could alone.
-            </p>
-          </div>
-          <div className="bg-gradient-to-br from-cyan-900 to-cyan-800 p-8 rounded-2xl text-center scale-in stagger-2">
-            <Zap className="w-12 h-12 text-cyan-400 mx-auto mb-4" />
-            <h3 className="text-xl font-bold text-white mb-3">Energy</h3>
-            <p className="text-gray-200">
-              Every session is powered by collective energy, motivation, and the drive to push boundaries.
-            </p>
-          </div>
-          <div className="bg-gradient-to-br from-gray-800 to-gray-700 p-8 rounded-2xl text-center scale-in stagger-3">
-            <Award className="w-12 h-12 text-cyan-400 mx-auto mb-4" />
-            <h3 className="text-xl font-bold text-white mb-3">Excellence</h3>
-            <p className="text-gray-200">
-              We strive for excellence in everything we do, from workouts to community support.
-            </p>
-          </div>
-        </div>
-
-        {/* Team Placeholder Grid */}
-        <div ref={teamRef} className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 fade-right">
-          {[1, 2, 3, 4, 5, 6].map((i) => (
-            <div key={i} className={`bg-gradient-to-br from-gray-800 to-gray-700 rounded-2xl p-6 text-center hover:scale-105 transition-transform duration-300 scale-in stagger-${i > 4 ? 4 : i}`}>
-              <div className="w-24 h-24 bg-gradient-to-r from-cyan-400 to-blue-500 rounded-full mx-auto mb-4 flex items-center justify-center">
-                <Users className="w-10 h-10 text-white" />
-              </div>
-              <h3 className="text-xl font-bold text-white mb-2">Team Member</h3>
-              <p className="text-cyan-400 mb-3">Role Title</p>
-              <p className="text-gray-300 text-sm">
-                Bio and expertise details coming soon...
-              </p>
+          {/* Card 2 */}
+          <div className="bg-gray-800 rounded-lg overflow-hidden shadow-lg relative">
+            <div className="aspect-square">
+              <img src="/crew_images/rohith_dharshan.jpg" alt="Rohith Dharshan M" className="w-full h-full object-cover" />
             </div>
-          ))}
+            <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-blue-900/60 via-black/50 to-transparent p-4">
+              <h3 className="text-white font-semibold text-lg text-center">Rohith Dharshan M</h3>
+            </div>
+          </div>
+
+          {/* Card 3 */}
+          <div className="bg-gray-800 rounded-lg overflow-hidden shadow-lg relative">
+            <div className="aspect-square">
+              <img src="/crew_images/sanjeev.jpg" alt="Sanjeev Muthusamy" className="w-full h-full object-cover" />
+            </div>
+            <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-blue-900/60 via-black/50 to-transparent p-4">
+              <h3 className="text-white font-semibold text-lg text-center">Sanjeev Muthusamy</h3>
+            </div>
+          </div>
+
+          {/* Card 4 */}
+          <div className="bg-gray-800 rounded-lg overflow-hidden shadow-lg relative">
+            <div className="aspect-square">
+              <img src="/crew_images/madhumitha.jpg" alt="Madhumitha B" className="w-full h-full object-cover" />
+            </div>
+            <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-blue-900/60 via-black/50 to-transparent p-4">
+              <h3 className="text-white font-semibold text-lg text-center">Madhumitha B</h3>
+            </div>
+          </div>
+
+          {/* Card 5 */}
+          <div className="bg-gray-800 rounded-lg overflow-hidden shadow-lg relative">
+            <div className="aspect-square">
+              <img src="/crew_images/logini.jpg" alt="Logini T S" className="w-full h-full object-cover" />
+            </div>
+            <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-blue-900/60 via-black/50 to-transparent p-4">
+              <h3 className="text-white font-semibold text-lg text-center">Logini T S</h3>
+            </div>
+          </div>
+
+          {/* Card 6 */}
+          <div className="bg-gray-800 rounded-lg overflow-hidden shadow-lg relative">
+            <div className="aspect-square">
+              <img src="/crew_images/karthik_saravanan.jpg" alt="Karthik Saravanan" className="w-full h-full object-cover" />
+            </div>
+            <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-blue-900/60 via-black/50 to-transparent p-4">
+              <h3 className="text-white font-semibold text-lg text-center">Karthik Saravanan</h3>
+            </div>
+          </div>
+
+          {/* Card 7 */}
+          <div className="bg-gray-800 rounded-lg overflow-hidden shadow-lg relative">
+            <div className="aspect-square">
+              <img src="/crew_images/Suresh.jpg" alt="Suresh" className="w-full h-full object-cover" />
+            </div>
+            <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-blue-900/60 via-black/50 to-transparent p-4">
+              <h3 className="text-white font-semibold text-lg text-center">Suresh</h3>
+            </div>
+          </div>
+
+          {/* Card 8 */}
+          <div className="bg-gray-800 rounded-lg overflow-hidden shadow-lg relative">
+            <div className="aspect-square">
+              <img src="/crew_images/aakash_bala.jpg" alt="Aakash Bala" className="w-full h-full object-cover" />
+            </div>
+            <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-blue-900/60 via-black/50 to-transparent p-4">
+              <h3 className="text-white font-semibold text-lg text-center">Aakash Bala</h3>
+            </div>
+          </div>
+
+          {/* Card 9 */}
+          <div className="bg-gray-800 rounded-lg overflow-hidden shadow-lg relative">
+            <div className="aspect-square">
+              <img src="/crew_images/soorya.jpg" alt="Soorya G" className="w-full h-full object-cover" />
+            </div>
+            <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-blue-900/60 via-black/50 to-transparent p-4">
+              <h3 className="text-white font-semibold text-lg text-center">Soorya G</h3>
+            </div>
+          </div>
+
+          {/* Card 10 */}
+          <div className="bg-gray-800 rounded-lg overflow-hidden shadow-lg relative">
+            <div className="aspect-square">
+              <img src="/crew_images/naren.jpg" alt="Naren Vaithiyaa G" className="w-full h-full object-cover" />
+            </div>
+            <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-blue-900/60 via-black/50 to-transparent p-4">
+              <h3 className="text-white font-semibold text-lg text-center">Naren Vaithiyaa G</h3>
+            </div>
+          </div>
         </div>
       </div>
     </div>
