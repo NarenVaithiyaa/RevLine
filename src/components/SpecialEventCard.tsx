@@ -18,8 +18,9 @@ const SpecialEventCard: React.FC<SpecialEventCardProps> = ({
   agenda,
   isCompleted = false
 }) => {
-  // Google Form URL - replace with your actual Google Form URL
-  const GOOGLE_FORM_URL = "https://forms.gle/diM1SaiyApZfQfdCA";
+  // Google Form URL removed per session update. If you want to re-enable registration,
+  // set a valid URL here or pass it via props in the future.
+  const GOOGLE_FORM_URL = "https://forms.gle/35hSoQmTH4ip6TvCA";
 
   const handleRegisterClick = () => {
     // Open Google Form in a new tab
@@ -151,6 +152,49 @@ const SpecialEventCard: React.FC<SpecialEventCardProps> = ({
         </div>
       )}
 
+      {/* Image Section for Session 11 (Featured Event) */}
+      {sessionNumber === 11 && !isCompleted && (
+        <div className="w-full h-[12rem] md:h-[14rem] rounded-2xl overflow-hidden mb-4">
+          <img
+            src="/images/court.jpeg"
+            alt="Court Image"
+            className="w-full h-full object-cover"
+            onError={(e) => {
+              console.error('Image failed to load from:', (e.target as HTMLImageElement).src);
+              (e.target as HTMLImageElement).style.display = 'none';
+              (e.target as HTMLImageElement).parentElement!.innerHTML = `
+                <div class="w-full h-full flex items-center justify-center bg-gradient-to-br from-cyan-400 to-blue-500 text-white font-bold text-lg rounded-2xl">
+                  📸 Court
+                </div>
+              `;
+            }}
+          />
+        </div>
+      )}
+
+      {/* Image Section for Session 12 (Featured Event) - show full image without cropping */}
+      {sessionNumber === 12 && !isCompleted && (
+        <div className="w-full h-[12rem] md:h-[14rem] rounded-2xl overflow-hidden mb-4 bg-black flex items-center justify-center relative">
+          <img
+            src="/images/tournament.jpg"
+            alt="Tournament"
+            className="max-h-full w-full object-contain"
+            onError={(e) => {
+              console.error('Image failed to load from:', (e.target as HTMLImageElement).src);
+              (e.target as HTMLImageElement).style.display = 'none';
+              (e.target as HTMLImageElement).parentElement!.innerHTML = `
+                <div class="w-full h-full flex items-center justify-center bg-gradient-to-br from-cyan-400 to-blue-500 text-white font-bold text-lg rounded-2xl">
+                  📸 Tournament
+                </div>
+              `;
+            }}
+          />
+          <div className="absolute bottom-3 right-3 bg-yellow-400 text-black font-semibold text-sm px-3 py-1 rounded-full shadow-md">
+            Registrations opening soon
+          </div>
+        </div>
+      )}
+
       <div className="flex-1 w-full">
         {/* Session Header with Status */}
         <div className="flex items-center justify-between mb-4">
@@ -215,8 +259,8 @@ const SpecialEventCard: React.FC<SpecialEventCardProps> = ({
         )}
       </div>
       
-      {/* Register Button - Only show for upcoming events */}
-      {!isCompleted && (
+      {/* Register Button - Only show for upcoming events, except session 12 */}
+      {!isCompleted && GOOGLE_FORM_URL && sessionNumber !== 12 && (
         <button 
           onClick={handleRegisterClick}
           className="w-full bg-gradient-to-r from-cyan-500 to-blue-600 font-extrabold py-3 px-6 rounded-xl hover:from-cyan-600 hover:to-blue-700 transition-all duration-300 text-white flex items-center justify-center space-x-2 group"

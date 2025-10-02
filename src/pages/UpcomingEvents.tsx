@@ -56,13 +56,20 @@ const UpcomingEvents: React.FC = () => {
                 Featured <span className="text-cyan-400">Session</span>
               </h3>
             </div>
-            <div className="flex justify-center px-4">
+            <div className="flex justify-center px-4 gap-8 flex-wrap">
               <SpecialEventCard 
-                sessionNumber={10}
-                date="28th September, 2025"
-                venue="TIFO turf, Coimbatore"
-                time="7:00 AM - 10:00 AM"
-                agenda="6:30 AM: Warm-up & Ice breaker session • 7:00 AM: Frisbee • 8:30 AM: Cricket • 9:45 AM: Warm down • NOTE : Turf fee applicable"
+                sessionNumber={11}
+                date="5th October, 2025"
+                venue="Champ badminton academy, Coimbatore"
+                time="8:00 - 10:00 AM"
+                isCompleted={false}
+              />
+              <SpecialEventCard 
+                sessionNumber={12}
+                date="12th October, 2025"
+                venue="dynk and rally, Vadavalli, Coimbatore"
+                time="7:00 - 11:00 AM"
+                agenda="Pickle ball tournament — bring your team!"
                 isCompleted={false}
               />
             </div>
@@ -75,27 +82,17 @@ const UpcomingEvents: React.FC = () => {
                 More <span className="text-cyan-400">Sessions</span>
               </h3>
             </div>
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 px-4 max-w-6xl mx-auto">
-              <div className="flex justify-center">
-                <EventCard 
+            <div className="flex justify-center px-4">
+              <div className="w-full max-w-md">
+                <EventCard
                   event={{
-                    sessionNumber: 11,
-                    date: "To be announced",
-                    venue: "To be announced",
-                    time: "To be announced",
-                    agenda: "Stay tuned for more exciting sessions coming your way!"
-                  }} 
-                />
-              </div>
-              <div className="flex justify-center">
-                <EventCard 
-                  event={{
-                    sessionNumber: 12,
-                    date: "To be announced",
-                    venue: "To be announced",
-                    time: "To be announced",
-                    agenda: "More adventures await! Keep following for updates."
-                  }} 
+                    sessionNumber: 13,
+                    date: 'TBA',
+                    venue: 'TBA',
+                    time: 'TBA',
+                    agenda: 'Details coming soon — stay tuned!',
+                    imageSrc: '/images/placeholder.jpg',
+                  }}
                 />
               </div>
             </div>
