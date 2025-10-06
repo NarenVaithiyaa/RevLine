@@ -1,1 +1,1 @@
- Move the current card under feautured events to completed events, refer the card format under completed events. Add a new card under featured events and change session numbers in more sessions' cards.Remove the google forms link in the card and replace it with "registrations opening soon !"
+ Move the current card under feautured events to completed events, refer the card format under completed events. Add a new card under featured events and change session numbers in more sessions' cards.Remove the google forms link in the card.

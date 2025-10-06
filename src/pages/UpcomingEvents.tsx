@@ -56,14 +56,7 @@ const UpcomingEvents: React.FC = () => {
                 Featured <span className="text-cyan-400">Session</span>
               </h3>
             </div>
-            <div className="flex justify-center px-4 gap-8 flex-wrap">
-              <SpecialEventCard 
-                sessionNumber={11}
-                date="5th October, 2025"
-                venue="Champ badminton academy, Coimbatore"
-                time="8:00 - 10:00 AM"
-                isCompleted={false}
-              />
+            <div className="flex justify-center px-4">
               <SpecialEventCard 
                 sessionNumber={12}
                 date="12th October, 2025"

@@ -20,7 +20,7 @@ const SpecialEventCard: React.FC<SpecialEventCardProps> = ({
 }) => {
   // Google Form URL removed per session update. If you want to re-enable registration,
   // set a valid URL here or pass it via props in the future.
-  const GOOGLE_FORM_URL = "https://forms.gle/35hSoQmTH4ip6TvCA";
+  const GOOGLE_FORM_URL = "https://forms.gle/NbEfRNw3QfE5PHhs6";
 
   const handleRegisterClick = () => {
     // Open Google Form in a new tab
@@ -174,7 +174,7 @@ const SpecialEventCard: React.FC<SpecialEventCardProps> = ({
 
       {/* Image Section for Session 12 (Featured Event) - show full image without cropping */}
       {sessionNumber === 12 && !isCompleted && (
-        <div className="w-full h-[12rem] md:h-[14rem] rounded-2xl overflow-hidden mb-4 bg-black flex items-center justify-center relative">
+        <div className="w-full h-[12rem] md:h-[14rem] rounded-2xl overflow-hidden mb-4 bg-black flex items-center justify-center">
           <img
             src="/images/tournament.jpg"
             alt="Tournament"
@@ -189,9 +189,6 @@ const SpecialEventCard: React.FC<SpecialEventCardProps> = ({
               `;
             }}
           />
-          <div className="absolute bottom-3 right-3 bg-yellow-400 text-black font-semibold text-sm px-3 py-1 rounded-full shadow-md">
-            Registrations opening soon
-          </div>
         </div>
       )}
 
@@ -259,8 +256,8 @@ const SpecialEventCard: React.FC<SpecialEventCardProps> = ({
         )}
       </div>
       
-      {/* Register Button - Only show for upcoming events, except session 12 */}
-      {!isCompleted && GOOGLE_FORM_URL && sessionNumber !== 12 && (
+      {/* Register Button - Only show for upcoming events */}
+      {!isCompleted && GOOGLE_FORM_URL && (
         <button 
           onClick={handleRegisterClick}
           className="w-full bg-gradient-to-r from-cyan-500 to-blue-600 font-extrabold py-3 px-6 rounded-xl hover:from-cyan-600 hover:to-blue-700 transition-all duration-300 text-white flex items-center justify-center space-x-2 group"
