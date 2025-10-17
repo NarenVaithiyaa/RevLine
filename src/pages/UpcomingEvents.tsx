@@ -58,11 +58,11 @@ const UpcomingEvents: React.FC = () => {
             </div>
             <div className="flex justify-center px-4">
               <SpecialEventCard 
-                sessionNumber={12}
-                date="12th October, 2025"
-                venue="dynk and rally, Vadavalli, Coimbatore"
-                time="7:00 - 11:00 AM"
-                agenda="Pickle ball tournament — bring your team!"
+                sessionNumber={13}
+                date="19th October, 2025"
+                venue="Race Course Zone - 2"
+                time="7:00 AM - 9:00 AM"
+                agenda=""
                 isCompleted={false}
               />
             </div>
@@ -79,12 +79,12 @@ const UpcomingEvents: React.FC = () => {
               <div className="w-full max-w-md">
                 <EventCard
                   event={{
-                    sessionNumber: 13,
+                    sessionNumber: 14,
                     date: 'TBA',
                     venue: 'TBA',
                     time: 'TBA',
                     agenda: 'Details coming soon — stay tuned!',
-                    imageSrc: '/images/placeholder.jpg',
+                      imageSrc: '#',
                   }}
                 />
               </div>

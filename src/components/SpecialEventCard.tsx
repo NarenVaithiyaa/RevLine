@@ -1,5 +1,4 @@
 import React from 'react';
-import { ArrowRight } from 'lucide-react';
 
 interface SpecialEventCardProps {
   sessionNumber: number;
@@ -18,13 +17,27 @@ const SpecialEventCard: React.FC<SpecialEventCardProps> = ({
   agenda,
   isCompleted = false
 }) => {
-  // Google Form URL removed per session update. If you want to re-enable registration,
-  // set a valid URL here or pass it via props in the future.
-  const GOOGLE_FORM_URL = "https://forms.gle/NbEfRNw3QfE5PHhs6";
+  // Registration via Google Forms has been disabled per session update.
 
-  const handleRegisterClick = () => {
-    // Open Google Form in a new tab
-    window.open(GOOGLE_FORM_URL, '_blank');
+  // Placeholder Google Form URL — replace this with the real form link when ready.
+  const GOOGLE_FORM_URL = 'https://forms.gle/G4tDsuBg1NyksER1A';
+
+  // Local registration handler for featured session CTA.
+  // If a Google Form URL is set, open it in a new tab. Otherwise fall back to an inline prompt.
+  const handleLocalRegister = () => {
+    if (GOOGLE_FORM_URL) {
+      window.open(GOOGLE_FORM_URL, '_blank');
+      return;
+    }
+
+    // Fallback: simple prompt to collect a name
+    const name = window.prompt('Enter your name to register for this session:');
+    if (name && name.trim()) {
+      // In future this could POST to an API or collect into state
+      window.alert(`Thanks ${name.trim()} — we've recorded your interest!`);
+    } else if (name !== null) {
+      window.alert('Registration cancelled or no name provided.');
+    }
   };
 
   return (
@@ -54,6 +67,26 @@ const SpecialEventCard: React.FC<SpecialEventCardProps> = ({
 
       {/* Image Section for Session 5 (Featured Event) */}
       {sessionNumber === 5 && !isCompleted && (
+        <div className="w-full h-[12rem] md:h-[14rem] rounded-2xl overflow-hidden mb-4">
+          <img 
+            src="/images/zone2.png" 
+            alt="Race Course Zone 2" 
+            className="w-full h-full object-cover"
+            onError={(e) => {
+              console.error('Image failed to load from:', (e.target as HTMLImageElement).src);
+              (e.target as HTMLImageElement).style.display = 'none';
+              (e.target as HTMLImageElement).parentElement!.innerHTML = `
+                <div class="w-full h-full flex items-center justify-center bg-gradient-to-br from-cyan-400 to-blue-500 text-white font-bold text-lg rounded-2xl">
+                  📸 Race Course Zone 2
+                </div>
+              `;
+            }}
+          />
+        </div>
+      )}
+      
+      {/* Image Section for Session 13 (Featured Event) */}
+      {sessionNumber === 13 && !isCompleted && (
         <div className="w-full h-[12rem] md:h-[14rem] rounded-2xl overflow-hidden mb-4">
           <img 
             src="/images/zone2.png" 
@@ -256,14 +289,13 @@ const SpecialEventCard: React.FC<SpecialEventCardProps> = ({
         )}
       </div>
       
-      {/* Register Button - Only show for upcoming events */}
-      {!isCompleted && GOOGLE_FORM_URL && (
-        <button 
-          onClick={handleRegisterClick}
+      {/* Register Button for Featured Session (show only for session 13 and upcoming) */}
+      {sessionNumber === 13 && !isCompleted && (
+        <button
+          onClick={handleLocalRegister}
           className="w-full bg-gradient-to-r from-cyan-500 to-blue-600 font-extrabold py-3 px-6 rounded-xl hover:from-cyan-600 hover:to-blue-700 transition-all duration-300 text-white flex items-center justify-center space-x-2 group"
         >
           <span>Register Now</span>
-          <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-200" />
         </button>
       )}
     </div>
