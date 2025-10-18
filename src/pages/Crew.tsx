@@ -52,7 +52,7 @@ const Crew: React.FC = () => {
               <img src="/crew_images/sanjeev.jpg" alt="Sanjeev Muthusamy" className="w-full h-full object-cover" />
             </div>
             <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-blue-900/60 via-black/50 to-transparent p-4">
-              <h3 className="text-white font-semibold text-lg text-center">Sanjeev Muthusamy</h3>
+              <h3 className="text-white font-semibold text-lg text-center">Sanjeev MS</h3>
             </div>
           </div>
 
