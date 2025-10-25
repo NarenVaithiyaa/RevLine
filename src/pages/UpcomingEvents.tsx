@@ -56,16 +56,15 @@ const UpcomingEvents: React.FC = () => {
                 Featured <span className="text-cyan-400">Session</span>
               </h3>
             </div>
-            <div className="flex justify-center px-4">
-              <SpecialEventCard 
-                sessionNumber={13}
-                date="19th October, 2025"
-                venue="Race Course Zone - 2"
-                time="7:00 AM - 9:00 AM"
-                agenda=""
-                isCompleted={false}
-              />
-            </div>
+              <div className="flex justify-center px-4">
+                <SpecialEventCard 
+                  sessionNumber={14}
+                  date="26th October, 2025"
+                  venue="Herkleys"
+                  time="7:00 AM - 9:00 AM"
+                  isCompleted={false}
+                />
+              </div>
           </div>
 
           {/* Other Events */}
@@ -79,7 +78,7 @@ const UpcomingEvents: React.FC = () => {
               <div className="w-full max-w-md">
                 <EventCard
                   event={{
-                    sessionNumber: 14,
+                    sessionNumber: 15,
                     date: 'TBA',
                     venue: 'TBA',
                     time: 'TBA',
