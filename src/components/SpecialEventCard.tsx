@@ -20,7 +20,7 @@ const SpecialEventCard: React.FC<SpecialEventCardProps> = ({
   // Registration via Google Forms has been disabled per session update.
 
   // Placeholder Google Form URL — replace this with the real form link when ready.
-  const GOOGLE_FORM_URL = 'https://forms.gle/G4tDsuBg1NyksER1A';
+  const GOOGLE_FORM_URL = 'https://forms.gle/m5q5L4as2s6P9Q1B6';
 
   // Local registration handler for featured session CTA.
   // If a Google Form URL is set, open it in a new tab. Otherwise fall back to an inline prompt.
@@ -309,8 +309,8 @@ const SpecialEventCard: React.FC<SpecialEventCardProps> = ({
         )}
       </div>
       
-      {/* Register Button for Featured Session (show only for session 13 and upcoming) */}
-      {sessionNumber === 13 && !isCompleted && (
+      {/* Register Button for Featured Session (show for session 13, 15 and upcoming) */}
+      {((sessionNumber === 13 || sessionNumber === 15) && !isCompleted) && (
         <button
           onClick={handleLocalRegister}
           className="w-full bg-gradient-to-r from-cyan-500 to-blue-600 font-extrabold py-3 px-6 rounded-xl hover:from-cyan-600 hover:to-blue-700 transition-all duration-300 text-white flex items-center justify-center space-x-2 group"

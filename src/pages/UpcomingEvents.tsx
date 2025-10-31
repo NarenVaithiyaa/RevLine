@@ -58,11 +58,11 @@ const UpcomingEvents: React.FC = () => {
             <div className="flex justify-center px-4">
               {/* Featured event (new) */}
               <SpecialEventCard
-                sessionNumber={14}
+                sessionNumber={15}
                 date="November 2, 2025"
-                venue="Pazhamudir (pickup)"
+                venue="Perumal Swamy temple"
                 time="5:30 AM - 10:30 AM"
-                agenda={"• 5:30 AM - pickup at pazhamudir • 5:30 AM - 7 AM - travelling to venue • 7 AM - 9 AM: trekking • 9 AM - 10:30 AM - return"}
+                agenda={"• 5:30 AM - pickup at pazhamudir • 5:30 AM - 7 AM : travelling to venue • 7 AM - 9 AM: trekking • 9 AM - 10:30 AM - return"}
                 isCompleted={false}
               />
             </div>
@@ -79,7 +79,7 @@ const UpcomingEvents: React.FC = () => {
               <div className="w-full max-w-md">
                 <EventCard
                   event={{
-                    sessionNumber: 15,
+                    sessionNumber: 16,
                     date: 'TBA',
                     venue: 'TBA',
                     time: 'TBA',
@@ -137,10 +137,8 @@ const UpcomingEvents: React.FC = () => {
           </div>
         </div>
       </div>
-      );
-    };
+    </div>
   );
-    export default UpcomingEvents;
 };
 
 export default UpcomingEvents;

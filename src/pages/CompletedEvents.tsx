@@ -168,6 +168,16 @@ const CompletedEvents: React.FC = () => {
                 isCompleted={true}
               />
             </div>
+            <div className="flex justify-center">
+              <SpecialEventCard
+                sessionNumber={14}
+                date="26th October, 2025"
+                venue="Herkley turf"
+                time=""
+                agenda=""
+                isCompleted={true}
+              />
+            </div>
           </div>
         </div>
 
