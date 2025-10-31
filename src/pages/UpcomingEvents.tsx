@@ -47,7 +47,6 @@ const UpcomingEvents: React.FC = () => {
           </div>
         </div>
 
-        {/* Events Grid */}
         <div className="mb-16">
           {/* Special Featured Event */}
           <div className="mb-12">
@@ -63,7 +62,7 @@ const UpcomingEvents: React.FC = () => {
                 date="November 2, 2025"
                 venue="Pazhamudir (pickup)"
                 time="5:30 AM - 10:30 AM"
-                agenda={"• 5:30 - pickup at pazhamudir • 5:30 - 7am - travelling to venue • 7-9: trekking • 9-10:30 - return"}
+                agenda={"• 5:30 AM - pickup at pazhamudir • 5:30 AM - 7 AM - travelling to venue • 7 AM - 9 AM: trekking • 9 AM - 10:30 AM - return"}
                 isCompleted={false}
               />
             </div>
@@ -138,8 +137,10 @@ const UpcomingEvents: React.FC = () => {
           </div>
         </div>
       </div>
-    </div>
+      );
+    };
   );
+    export default UpcomingEvents;
 };
 
 export default UpcomingEvents;
