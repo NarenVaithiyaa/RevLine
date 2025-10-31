@@ -84,7 +84,6 @@ const UpcomingEvents: React.FC = () => {
                     venue: 'TBA',
                     time: 'TBA',
                     agenda: 'Details coming soon — stay tuned!',
-                      imageSrc: '#',
                   }}
                 />
               </div>
