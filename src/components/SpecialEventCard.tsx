@@ -20,7 +20,7 @@ const SpecialEventCard: React.FC<SpecialEventCardProps> = ({
   // Registration via Google Forms has been disabled per session update.
 
   // Placeholder Google Form URL — replace this with the real form link when ready.
-  const GOOGLE_FORM_URL = 'https://forms.gle/m5q5L4as2s6P9Q1B6';
+  const GOOGLE_FORM_URL = 'https://forms.gle/aw76RThWTP2pJhhQ9';
 
   // Local registration handler for featured session CTA.
   // If a Google Form URL is set, open it in a new tab. Otherwise fall back to an inline prompt.
@@ -265,6 +265,26 @@ const SpecialEventCard: React.FC<SpecialEventCardProps> = ({
         </div>
       )}
 
+      {/* Image Section for Session 16 (Featured Event) */}
+      {sessionNumber === 16 && !isCompleted && (
+        <div className="w-full h-[12rem] md:h-[14rem] rounded-2xl overflow-hidden mb-4">
+          <img
+            src="/images/turf.png"
+            alt="Herkley's Turf"
+            className="w-full h-full object-cover"
+            onError={(e) => {
+              console.error('Image failed to load from:', (e.target as HTMLImageElement).src);
+              (e.target as HTMLImageElement).style.display = 'none';
+              (e.target as HTMLImageElement).parentElement!.innerHTML = `
+                <div class="w-full h-full flex items-center justify-center bg-gradient-to-br from-cyan-400 to-blue-500 text-white font-bold text-lg rounded-2xl">
+                  📸 Herkley's Turf
+                </div>
+              `;
+            }}
+          />
+        </div>
+      )}
+
       <div className="flex-1 w-full">
         {/* Session Header with Status */}
         <div className="flex items-center justify-between mb-4">
@@ -329,8 +349,8 @@ const SpecialEventCard: React.FC<SpecialEventCardProps> = ({
         )}
       </div>
       
-      {/* Register Button for Featured Session (show for session 13, 15 and upcoming) */}
-      {((sessionNumber === 13 || sessionNumber === 15) && !isCompleted) && (
+      {/* Register Button for Featured Session (show for session 13, 15, 16 and upcoming) */}
+      {((sessionNumber === 13 || sessionNumber === 15 || sessionNumber === 16) && !isCompleted) && (
         <button
           onClick={handleLocalRegister}
           className="w-full bg-gradient-to-r from-cyan-500 to-blue-600 font-extrabold py-3 px-6 rounded-xl hover:from-cyan-600 hover:to-blue-700 transition-all duration-300 text-white flex items-center justify-center space-x-2 group"
