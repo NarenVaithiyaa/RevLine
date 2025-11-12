@@ -125,6 +125,16 @@ const Crew: React.FC = () => {
               <h3 className="text-white font-semibold text-lg text-center">Naren Vaithiyaa G</h3>
             </div>
           </div>
+
+          {/* Card 11 */}
+          <div className="bg-gray-800 rounded-lg overflow-hidden shadow-lg relative transform transition-transform duration-300 hover:scale-105 cursor-pointer">
+            <div className="aspect-square">
+              <img src="/crew_images/murali.jpeg" alt="Murali" className="w-full h-full object-cover" />
+            </div>
+            <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-blue-900/60 via-black/50 to-transparent p-4">
+              <h3 className="text-white font-semibold text-lg text-center">Murali Karthik</h3>
+            </div>
+          </div>
         </div>
       </div>
     </div>
