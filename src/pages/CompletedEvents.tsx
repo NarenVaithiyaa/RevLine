@@ -1,13 +1,32 @@
 import React from 'react';
 import { Trophy } from 'lucide-react';
 import { useScrollAnimation } from '../hooks/useScrollAnimation';
-import SpecialEventCard from '../components/SpecialEventCard';
+
+const events = [
+  { session: 1, date: "27th July, 2025", venue: "Zone-2, Race course, Coimbatore" },
+  { session: 2, date: "3rd August, 2025", venue: "Herkley's turf, Peelamedu, Coimbatore" },
+  { session: 3, date: "10th August, 2025", venue: "Ponnuuthu Amman Temple" },
+  { session: 4, date: "17th August, 2025", venue: "PRS Ground" },
+  { session: 5, date: "24th August, 2025", venue: "Race Course Zone - 2" },
+  { session: 6, date: "31st August, 2025", venue: "Herkley's turf, Peelamedu, Coimbatore" },
+  { session: 7, date: "7th September, 2025", venue: "Thogaimalai" },
+  { session: 8, date: "14th September, 2025", venue: "Herkley's turf, Peelamedu, Coimbatore" },
+  { session: 9, date: "21st September, 2025", venue: "PRS Ground" },
+  { session: 10, date: "28th September, 2025", venue: "TIFO turf, Coimbatore" },
+  { session: 11, date: "5th October, 2025", venue: "Champ badminton academy, Coimbatore" },
+  { session: 12, date: "12th October, 2025", venue: "dynk and rally, Vadavalli, Coimbatore" },
+  { session: 13, date: "19th October, 2025", venue: "Race Course Zone - 2" },
+  { session: 14, date: "26th October, 2025", venue: "Herkley turf" },
+  { session: 15, date: "November 2, 2025", venue: "Perumal Swamy temple" },
+  { session: 16, date: "8th Nov, Saturday", venue: "Herkley turf, Peelamedu" },
+  { session: 17, date: "16th November", venue: "Race Course Zone-2" },
+];
 
 const CompletedEvents: React.FC = () => {
   const headerRef = useScrollAnimation();
 
   return (
-    <div className="min-h-screen bg-gray-900 py-20">
+    <div className="min-h-screen bg-gray-900 pt-36 pb-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header Section */}
         <div ref={headerRef} className="text-center mb-16 fade-up">
@@ -25,180 +44,30 @@ const CompletedEvents: React.FC = () => {
           </p>
         </div>
 
-        {/* Completed Events */}
-        <div className="mb-16">
-          <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-8 px-4 max-w-7xl mx-auto">
-            <div className="flex justify-center">
-              <SpecialEventCard 
-                sessionNumber={1}
-                date="27th July, 2025"
-                venue="Zone-2, Race course, Coimbatore"
-                time="6:30 - 8:00 AM"
-                agenda="6:30 - 6.50: WELCOME SPEECH • 6:50 - 7.00: WARM UP • 7.00 - 7.30: JOG AND WALK • 7.30 - 7.50: FUN GAME • 7.50 - 8.00: WARM DOWN AND SOCIALISE"
-                isCompleted={true}
-              />
-            </div>
-            <div className="flex justify-center">
-              <SpecialEventCard 
-                sessionNumber={2}
-                date="3rd August, 2025"
-                venue="Herkley's turf, Peelamedu, Coimbatore"
-                time="Batch-1: 6:00-8:00 AM | Batch-2: 7:00-9:00 AM"
-                agenda="Batch-1: 6:00 AM - Assemble • 6:15-6:30 AM - Warm-up • 6:30-7:30 AM - Badminton • 7:30-8:00 AM - Warm-down and Socialize • • • • • • • Batch-2: 7:00 AM - Assemble • 7:15-7:30 AM - Warm-up • 7:30-8:30 AM - Badminton • 8:30-9:00 AM - Warm-down and Socialize • • • • • • • **NOTE: Turf fee applicable (Rs.50 - Rs.100 per person)**"
-                isCompleted={true}
-              />
-            </div>
-            <div className="flex justify-center">
-              <SpecialEventCard 
-                sessionNumber={3}
-                date="10th August, 2025"
-                venue="Ponnuuthu Amman Temple"
-                time="5:30 AM - 8:00 AM"
-                agenda="Trekking Agenda: • 🕔 5:30 AM – Meetup at Peelamedu Pazhamudhir • 🕕 6:00 AM – Start from Peelamedu Pazhamudhir to Ponnuuthu Amman Temple • 🕡 6:30 AM – Begin Trekking • 🕖 7:00 AM – Reach Temple and begin descent • 🕢 7:30 AM – Reach Foothills • 🕗 8:00 AM – Reach back to Peelamedu Pazhamudhir • • **NOTE: Those who can come to Ponnuuthu Amman Temple directly by car can do so. Those coming on two-wheelers will be picked up at Peelamedu Pazhamudhir.**"
-                isCompleted={true}
-              />
-            </div>
-            <div className="flex justify-center">
-              <SpecialEventCard 
-                sessionNumber={4}
-                date="17th August, 2025"
-                venue="PRS Ground"
-                time="6:30 - 8:00 AM"
-                agenda="6:30 AM - 7:00 AM - Warm up and members arriving • 7:00 - 7:30 AM - HIIT Training • 7:30 - 8:15 AM - Fun games • 8:15 AM - Warm down and leave"
-                isCompleted={true}
-              />
-            </div>
-            <div className="flex justify-center">
-              <SpecialEventCard 
-                sessionNumber={5}
-                date="24th August, 2025"
-                venue="Race Course Zone - 2"
-                time="6:00 AM - 8:00 AM"
-                agenda="6:00 - 6:30 AM: Warm up • 6:30 - 7:30 AM: Walking/Jogging • 7:30 - 8:00 AM: Warm down/Socialize"
-                isCompleted={true}
-              />
-            </div>
-            <div className="flex justify-center">
-              <SpecialEventCard 
-                sessionNumber={6}
-                date="31st August, 2025"
-                venue="Herkley's turf, Peelamedu, Coimbatore"
-                time="6:00 AM - 8:00 AM"
-                agenda="6:00 - 6:30 AM: Warm up • 6:30 - 7:30 AM: Badminton • 7:30 - 8:00 AM: Warm down/Socialize"
-                isCompleted={true}
-              />
-            </div>
-            <div className="flex justify-center">
-              <SpecialEventCard 
-                sessionNumber={7}
-                date="7th September, 2025"
-                venue="Thogaimalai"
-                time=""
-                agenda=""
-                isCompleted={true}
-              />
-            </div>
-            <div className="flex justify-center">
-              <SpecialEventCard 
-                sessionNumber={8}
-                date="14th September, 2025"
-                venue="Herkley's turf, Peelamedu, Coimbatore"
-                time=""
-                agenda=""
-                isCompleted={true}
-              />
-            </div>
-            <div className="flex justify-center">
-              <SpecialEventCard 
-                sessionNumber={9}
-                date="21st September, 2025"
-                venue="PRS Ground"
-                time=""
-                agenda=""
-                isCompleted={true}
-              />
-            </div>
-            <div className="flex justify-center">
-              <SpecialEventCard 
-                sessionNumber={10}
-                date="28th September, 2025"
-                venue="TIFO turf, Coimbatore"
-                time="7:00 AM - 10:00 AM"
-                agenda="6:30 AM: Warm-up & Ice breaker session • 7:00 AM: Frisbee • 8:30 AM: Cricket • 9:45 AM: Warm down • NOTE : Turf fee applicable"
-                isCompleted={true}
-              />
-            </div>
-            <div className="flex justify-center">
-              <SpecialEventCard 
-                sessionNumber={12}
-                date="12th October, 2025"
-                venue="dynk and rally, Vadavalli, Coimbatore"
-                time="7:00 - 11:00 AM"
-                agenda="Pickle ball tournament — bring your team!"
-                isCompleted={true}
-              />
-            </div>
-            <div className="flex justify-center">
-              <SpecialEventCard 
-                sessionNumber={11}
-                date="5th October, 2025"
-                venue="Champ badminton academy, Coimbatore"
-                time="8:00 - 10:00 AM"
-                agenda=""
-                isCompleted={true}
-              />
-            </div>
-            <div className="flex justify-center">
-              <SpecialEventCard 
-                sessionNumber={12}
-                date="12th October, 2025"
-                venue="dynk and rally, Vadavalli, Coimbatore"
-                time="7:00 - 11:00 AM"
-                agenda="Pickle ball tournament — bring your team!"
-                isCompleted={true}
-              />
-            </div>
-            <div className="flex justify-center">
-              <SpecialEventCard 
-                sessionNumber={13}
-                date="19th October, 2025"
-                venue="Race Course Zone - 2"
-                time="7:00 AM - 9:00 AM"
-                agenda=""
-                isCompleted={true}
-              />
-            </div>
-            <div className="flex justify-center">
-              <SpecialEventCard
-                sessionNumber={14}
-                date="26th October, 2025"
-                venue="Herkley turf"
-                time=""
-                agenda=""
-                isCompleted={true}
-              />
-            </div>
-            <div className="flex justify-center">
-              <SpecialEventCard
-                sessionNumber={15}
-                date="November 2, 2025"
-                venue="Perumal Swamy temple"
-                time="5:30 AM - 10:30 AM"
-                agenda="• 5:30 AM - pickup at pazhamudir • 5:30 AM - 7 AM : travelling to venue • 7 AM - 9 AM: trekking • 9 AM - 10:30 AM - return"
-                isCompleted={true}
-              />
-            </div>
-            <div className="flex justify-center">
-              <SpecialEventCard
-                sessionNumber={16}
-                date="8th Nov, Saturday"
-                venue="Herkley turf, Peelamedu"
-                time="7:00 AM - 9:00 AM"
-                agenda=""
-                isCompleted={true}
-              />
-            </div>
-          </div>
+        {/* Completed Events Table */}
+        <div className="mb-16 overflow-x-auto">
+          <table className="w-full text-left border-collapse bg-gray-800/50 rounded-xl overflow-hidden">
+            <thead>
+              <tr className="bg-gray-800 text-cyan-400 text-lg">
+                <th className="p-6 font-bold">Date</th>
+                <th className="p-6 font-bold">Session Name</th>
+                <th className="p-6 font-bold">Location</th>
+                <th className="p-6 font-bold">Photos</th>
+              </tr>
+            </thead>
+            <tbody>
+              {events.map((event) => (
+                <tr key={event.session} className="border-b border-gray-700 hover:bg-gray-700/50 transition-colors">
+                  <td className="p-6 text-gray-300 whitespace-nowrap">{event.date}</td>
+                  <td className="p-6 text-white font-semibold whitespace-nowrap">Session {event.session}</td>
+                  <td className="p-6 text-gray-300">{event.venue}</td>
+                  <td className="p-6 text-gray-400">
+                    Link TBA
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
         </div>
 
         {/* Event Media Archive */}
