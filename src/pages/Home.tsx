@@ -87,16 +87,16 @@ const Home: React.FC<HomeProps> = ({ setCurrentPage }) => {
             </div>
           </div>
           
-          <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center items-center">
+          <div className="flex flex-row gap-3 sm:gap-6 justify-center items-center flex-wrap">
             <button 
               onClick={() => setCurrentPage?.('upcoming-events')}
-              className="bg-gray-900/40 backdrop-blur-xl border border-white/10 text-white px-4 sm:px-6 py-2 sm:py-3 rounded-xl font-bold text-base sm:text-lg hover:bg-gray-800/60 transition-all duration-300 transform hover:scale-105 shadow-lg w-full sm:w-auto min-w-[160px]"
+              className="bg-gray-900/40 backdrop-blur-xl border border-white/10 text-white px-4 sm:px-6 py-2 sm:py-3 rounded-xl font-bold text-sm sm:text-lg hover:bg-gray-800/60 transition-all duration-300 transform hover:scale-105 shadow-lg w-auto min-w-[130px] sm:min-w-[160px]"
             >
               Join the Movement
             </button>
             <button 
               onClick={scrollToWhySection}
-              className="bg-gray-900/40 backdrop-blur-xl border border-white/10 text-cyan-400 px-4 sm:px-6 py-2 sm:py-3 rounded-xl font-bold text-base sm:text-lg hover:bg-gray-800/60 transition-all duration-300 w-full sm:w-auto min-w-[160px]"
+              className="bg-gray-900/40 backdrop-blur-xl border border-white/10 text-cyan-400 px-4 sm:px-6 py-2 sm:py-3 rounded-xl font-bold text-sm sm:text-lg hover:bg-gray-800/60 transition-all duration-300 w-auto min-w-[130px] sm:min-w-[160px]"
             >
               Learn More
             </button>
