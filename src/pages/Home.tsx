@@ -42,7 +42,7 @@ const Home: React.FC<HomeProps> = ({ setCurrentPage }) => {
   };
 
   return (
-    <div className="bg-gray-900">
+    <div className="bg-gray-900 overflow-x-hidden">
       {/* Hero Section */}
       <section ref={heroRef} className="relative min-h-[calc(100vh+4rem)] flex items-center justify-center overflow-hidden fade-up -mt-16">
         <div className="absolute inset-0 z-0">
@@ -132,7 +132,7 @@ const Home: React.FC<HomeProps> = ({ setCurrentPage }) => {
             </h2>
           </div>
           
-          <div className="bg-gray-900/40 backdrop-blur-xl p-12 md:p-16 rounded-3xl shadow-2xl border border-white/10">
+          <div className="bg-gray-900/40 backdrop-blur-xl p-6 sm:p-12 md:p-16 rounded-3xl shadow-2xl border border-white/10">
             <div className="flex justify-center mb-10">
               <div className="bg-gradient-to-r from-cyan-500 to-blue-600 p-6 rounded-3xl shadow-lg shadow-cyan-500/25">
                 <Users className="w-20 h-20 text-white" />
@@ -242,7 +242,7 @@ const Home: React.FC<HomeProps> = ({ setCurrentPage }) => {
             </h2>
           </div>
           
-          <div className="bg-white/10 backdrop-blur-md p-16 rounded-3xl shadow-2xl border border-white/20">
+          <div className="bg-white/10 backdrop-blur-md p-6 sm:p-12 md:p-16 rounded-3xl shadow-2xl border border-white/20">
             <div className="max-w-4xl mx-auto text-center space-y-10">
               <h3 className="text-4xl md:text-5xl font-black text-white mb-12">
                 Anyone. Anywhere. Anytime.
@@ -275,7 +275,7 @@ const Home: React.FC<HomeProps> = ({ setCurrentPage }) => {
             </h2>
           </div>
           
-          <div className="bg-gray-900/40 backdrop-blur-xl p-16 rounded-3xl shadow-2xl border border-white/10">
+          <div className="bg-gray-900/40 backdrop-blur-xl p-6 sm:p-12 md:p-16 rounded-3xl shadow-2xl border border-white/10">
             <div className="max-w-4xl mx-auto text-center">
               <h3 className="text-3xl md:text-4xl font-bold text-cyan-300 mb-12">The Mission:</h3>
               <blockquote className="text-2xl md:text-3xl text-white leading-relaxed italic font-light">
