@@ -13,7 +13,7 @@ const UpcomingEvents: React.FC = () => {
     <div className="min-h-screen bg-gray-900 pt-36 pb-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header Section */}
-        <div ref={headerRef} className="text-center mb-16 fade-up">
+        <div ref={headerRef} className="text-center mb-8 fade-up">
           <div className="flex items-center justify-center mb-6">
             <div className="bg-gradient-to-r from-cyan-400 to-blue-500 p-3 rounded-xl">
               <Calendar className="w-8 h-8 text-white" />
@@ -29,18 +29,18 @@ const UpcomingEvents: React.FC = () => {
         </div>
 
         {/* Stats Section */}
-        <div ref={statsRef} className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16 fade-up">
-          <div className="bg-gradient-to-br from-gray-800 to-gray-700 p-6 rounded-xl text-center scale-in stagger-1">
+        <div ref={statsRef} className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8 fade-up">
+          <div className="bg-gray-900/40 backdrop-blur-xl border border-white/10 p-6 rounded-xl text-center scale-in stagger-1">
             <Users className="w-12 h-12 text-cyan-400 mx-auto mb-3" />
             <div className="text-3xl font-bold text-white mb-2">50+</div>
             <div className="text-gray-300">Active Members</div>
           </div>
-          <div className="bg-gradient-to-br from-gray-800 to-gray-700 p-6 rounded-xl text-center scale-in stagger-2">
+          <div className="bg-gray-900/40 backdrop-blur-xl border border-white/10 p-6 rounded-xl text-center scale-in stagger-2">
             <Calendar className="w-12 h-12 text-cyan-400 mx-auto mb-3" />
             <div className="text-3xl font-bold text-white mb-2">4+</div>
             <div className="text-gray-300">Sessions Planned</div>
           </div>
-          <div className="bg-gradient-to-br from-gray-800 to-gray-700 p-6 rounded-xl text-center scale-in stagger-3">
+          <div className="bg-gray-900/40 backdrop-blur-xl border border-white/10 p-6 rounded-xl text-center scale-in stagger-3">
             <Clock className="w-12 h-12 text-cyan-400 mx-auto mb-3" />
             <div className="text-3xl font-bold text-white mb-2">90</div>
             <div className="text-gray-300">Minutes Per Session</div>
@@ -99,7 +99,7 @@ const UpcomingEvents: React.FC = () => {
                 <div className="group w-full max-w-md [perspective:1000px] cursor-pointer">
                   <div className="relative w-full transition-all duration-700 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]">
                     {/* Front Side */}
-                    <div className="relative w-full [backface-visibility:hidden] rounded-2xl overflow-hidden border-2 border-gray-700 shadow-2xl shadow-cyan-500/20 bg-gray-800">
+                    <div className="relative w-full [backface-visibility:hidden] rounded-2xl overflow-hidden border border-white/10 shadow-2xl shadow-cyan-500/20 bg-gray-900/40 backdrop-blur-xl">
                       <img 
                         src="/images/tournament.jpeg" 
                         alt="Badminton Tournament" 
@@ -119,7 +119,7 @@ const UpcomingEvents: React.FC = () => {
                     </div>
                     
                     {/* Back Side */}
-                    <div className="absolute inset-0 w-full h-full [backface-visibility:hidden] [transform:rotateY(180deg)] rounded-2xl overflow-hidden border-2 border-cyan-500/50 shadow-2xl shadow-cyan-500/20 bg-gray-800">
+                    <div className="absolute inset-0 w-full h-full [backface-visibility:hidden] [transform:rotateY(180deg)] rounded-2xl overflow-hidden border border-white/10 shadow-2xl shadow-cyan-500/20 bg-gray-900/40 backdrop-blur-xl">
                       <img 
                         src="/images/general_info.jpeg" 
                         alt="Tournament Info" 
@@ -139,7 +139,7 @@ const UpcomingEvents: React.FC = () => {
               </div>
               
               <div className="mt-8 flex justify-center">
-                <button className="bg-gray-700 text-gray-300 font-bold py-3 px-8 rounded-xl cursor-not-allowed border border-gray-600 hover:bg-gray-600 transition-colors duration-300">
+                <button className="bg-white/5 backdrop-blur-md text-gray-400 font-bold py-3 px-8 rounded-xl cursor-not-allowed border border-white/10 hover:bg-white/10 transition-colors duration-300">
                   Registration link coming soon
                 </button>
               </div>
@@ -151,7 +151,7 @@ const UpcomingEvents: React.FC = () => {
                 Rules and <span className="text-cyan-400">Regulations</span>
               </h3>
               
-              <div className="bg-gray-800 rounded-2xl p-6 md:p-8 border border-gray-700 shadow-xl">
+              <div className="bg-gray-900/40 backdrop-blur-xl rounded-2xl p-6 md:p-8 border border-white/10 shadow-xl">
                 <h4 className="text-xl font-bold text-cyan-400 mb-4 text-center">BADMINTON TOURNAMENT RULES & REGULATIONS</h4>
                 <p className="text-gray-300 text-center mb-6 font-semibold">Doubles – Knockout Format<br/>Scoring: 15 Points | Best of 3 | Match Point at 14</p>
                 
@@ -269,7 +269,7 @@ const UpcomingEvents: React.FC = () => {
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-8 text-center">What to Expect</h2>
           <div className="flex flex-col md:flex-row gap-6 justify-center items-center px-4">
             {/* What to Bring Card */}
-            <div className="w-full max-w-xs md:w-64 h-96 bg-gradient-to-br from-gray-800 to-gray-700 shadow-2xl shadow-cyan-500/20 p-6 md:p-9 space-y-3 relative overflow-hidden rounded-2xl border border-gray-600 hover:border-cyan-500/50 transition-all duration-300">
+            <div className="w-full max-w-xs md:w-64 h-96 bg-gray-900/40 backdrop-blur-xl shadow-2xl shadow-cyan-500/20 p-6 md:p-9 space-y-3 relative overflow-hidden rounded-2xl border border-white/10 hover:border-cyan-500/50 transition-all duration-300">
               <div className="w-24 h-24 bg-gradient-to-r from-cyan-500 to-blue-600 rounded-full absolute -right-5 -top-7">
                 <p className="absolute bottom-6 left-7 text-white text-2xl font-bold">01</p>
               </div>
@@ -289,7 +289,7 @@ const UpcomingEvents: React.FC = () => {
             </div>
 
             {/* Session Benefits Card */}
-            <div className="w-full max-w-xs md:w-64 h-96 bg-gradient-to-br from-gray-800 to-gray-700 shadow-2xl shadow-cyan-500/20 p-6 md:p-9 space-y-3 relative overflow-hidden rounded-2xl border border-gray-600 hover:border-cyan-500/50 transition-all duration-300">
+            <div className="w-full max-w-xs md:w-64 h-96 bg-gray-900/40 backdrop-blur-xl shadow-2xl shadow-cyan-500/20 p-6 md:p-9 space-y-3 relative overflow-hidden rounded-2xl border border-white/10 hover:border-cyan-500/50 transition-all duration-300">
               <div className="w-24 h-24 bg-gradient-to-r from-cyan-500 to-blue-600 rounded-full absolute -right-5 -top-7">
                 <p className="absolute bottom-6 left-7 text-white text-2xl font-bold">02</p>
               </div>

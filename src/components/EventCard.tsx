@@ -17,7 +17,7 @@ interface EventCardProps {
 
 const EventCard: React.FC<EventCardProps> = ({ event, isCompleted = false }) => {
   return (
-    <div className="w-full max-w-sm md:max-w-md lg:max-w-lg mx-auto bg-gradient-to-br from-gray-800 to-gray-700 rounded-2xl p-4 md:p-6 shadow-2xl hover:shadow-cyan-500/20 transition-all duration-300 transform hover:scale-105 border border-gray-600 hover:border-cyan-500/50">
+    <div className="w-full max-w-sm md:max-w-md lg:max-w-lg mx-auto bg-gray-900/40 backdrop-blur-xl border border-white/10 rounded-2xl p-4 md:p-6 shadow-2xl hover:shadow-cyan-500/20 transition-all duration-300 transform hover:scale-105 hover:border-cyan-500/50">
       {/* Optional image for the event */}
       {event.imageSrc && (
         <div className={`w-full h-[12rem] md:h-[14rem] rounded-2xl overflow-hidden mb-4 ${event.sessionNumber === 12 ? 'bg-black flex items-center justify-center' : ''}`}>

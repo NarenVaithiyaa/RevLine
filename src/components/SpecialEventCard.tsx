@@ -41,7 +41,7 @@ const SpecialEventCard: React.FC<SpecialEventCardProps> = ({
   };
 
   return (
-    <div className={`w-full max-w-lg md:max-w-xl lg:w-[32rem] ${isCompleted ? 'min-h-[150px]' : 'min-h-[320px]'} bg-neutral-800 rounded-3xl text-neutral-300 p-4 md:p-6 flex flex-col items-start justify-center gap-4 hover:bg-gray-900 hover:shadow-2xl transition-all duration-300 transform hover:scale-105 mx-auto ${
+    <div className={`w-full max-w-lg md:max-w-xl lg:w-[32rem] ${isCompleted ? 'min-h-[150px]' : 'min-h-[320px]'} bg-gray-900/40 backdrop-blur-xl border border-white/10 rounded-3xl text-neutral-300 p-4 md:p-6 flex flex-col items-start justify-center gap-4 hover:bg-gray-900/60 hover:shadow-2xl transition-all duration-300 transform hover:scale-105 mx-auto ${
       isCompleted ? 'hover:shadow-green-400' : 'hover:shadow-cyan-400'
     }`}>
       
