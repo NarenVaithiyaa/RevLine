@@ -1,22 +1,29 @@
 import React from 'react';
 import { Menu, X } from 'lucide-react';
+import { Link, useLocation } from 'react-router-dom';
 
 interface LayoutProps {
   children: React.ReactNode;
-  currentPage: string;
-  setCurrentPage: (page: string) => void;
 }
 
-const Layout: React.FC<LayoutProps> = ({ children, currentPage, setCurrentPage }) => {
+const Layout: React.FC<LayoutProps> = ({ children }) => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = React.useState(false);
+  const location = useLocation();
+  const currentPath = location.pathname;
 
   const navItems = [
-    { id: 'home', label: 'Home' },
-    { id: 'upcoming-events', label: 'Upcoming Events' },
-    { id: 'completed-events', label: 'Completed Events' },
-    { id: 'crew', label: 'Crew' },
-    { id: 'terms', label: 'Terms and Conditions' },
+    { path: '/', label: 'Home' },
+    { path: '/upcoming-events', label: 'Upcoming Events' },
+    { path: '/completed-events', label: 'Completed Events' },
+    { path: '/crew', label: 'Crew' },
+    { path: '/terms', label: 'Terms and Conditions' },
   ];
+
+  const isActive = (path: string) => {
+    if (path === '/' && currentPath === '/') return true;
+    if (path !== '/' && currentPath.startsWith(path)) return true;
+    return false;
+  };
 
   return (
     <div className="min-h-screen bg-gray-900 text-white">
@@ -28,32 +35,32 @@ const Layout: React.FC<LayoutProps> = ({ children, currentPage, setCurrentPage }
           <div className="px-6 sm:px-8">
             <div className="flex items-center justify-between h-16">
               {/* Logo */}
-              <div 
+              <Link 
+                to="/"
                 className="flex items-center cursor-pointer group"
-                onClick={() => setCurrentPage('home')}
               >
                 <img
                   src="/images/revline_logo.png"
                   alt="RevLine Logo"
                   className="w-14 h-14 sm:w-20 sm:h-20 object-contain group-hover:scale-110 transition-transform duration-200"
                 />
-              </div>
+              </Link>
 
               {/* Desktop Navigation */}
               <div className="hidden md:block">
                 <div className="flex items-center space-x-1">
                   {navItems.map((item) => (
-                    <button
-                      key={item.id}
-                      onClick={() => setCurrentPage(item.id)}
+                    <Link
+                      key={item.path}
+                      to={item.path}
                       className={`px-4 py-2 text-sm font-medium rounded-full transition-all duration-200 ${
-                        currentPage === item.id
+                        isActive(item.path)
                           ? 'text-white bg-white/10 shadow-lg backdrop-blur-sm border border-white/5'
                           : 'text-gray-300 hover:text-white hover:bg-white/5'
                       }`}
                     >
                       {item.label}
-                    </button>
+                    </Link>
                   ))}
                 </div>
               </div>
@@ -76,20 +83,18 @@ const Layout: React.FC<LayoutProps> = ({ children, currentPage, setCurrentPage }
           }`}>
             <div className="px-4 space-y-1">
               {navItems.map((item) => (
-                <button
-                  key={item.id}
-                  onClick={() => {
-                    setCurrentPage(item.id);
-                    setIsMobileMenuOpen(false);
-                  }}
+                <Link
+                  key={item.path}
+                  to={item.path}
+                  onClick={() => setIsMobileMenuOpen(false)}
                   className={`block w-full text-left px-4 py-2 text-sm font-medium rounded-full transition-colors duration-200 ${
-                    currentPage === item.id
+                    isActive(item.path)
                       ? 'text-white bg-white/10'
                       : 'text-gray-300 hover:text-white hover:bg-white/5'
                   }`}
                 >
                   {item.label}
-                </button>
+                </Link>
               ))}
             </div>
           </div>
