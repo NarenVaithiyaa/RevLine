@@ -16,12 +16,12 @@ export default defineConfig({
         theme_color: '#111827',
         icons: [
           {
-            src: '/images/revline_logo.png',
+            src: '/images/admin_logo.png',
             sizes: '192x192',
             type: 'image/png'
           },
           {
-            src: '/images/revline_logo.png',
+            src: '/images/admin_logo.png',
             sizes: '512x512',
             type: 'image/png'
           }
