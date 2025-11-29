@@ -30,7 +30,18 @@ export default defineConfig({
         display: 'standalone',
         background_color: '#111827'
       }
-    })
+    }),
+    {
+      name: 'rename-admin-html',
+      enforce: 'post',
+      generateBundle(_, bundle) {
+        if (bundle['admin.html']) {
+          bundle['index.html'] = bundle['admin.html'];
+          bundle['index.html'].fileName = 'index.html';
+          delete bundle['admin.html'];
+        }
+      },
+    }
   ],
   build: {
     outDir: 'dist-admin',
