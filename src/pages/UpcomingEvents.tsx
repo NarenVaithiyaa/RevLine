@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import EventCard from '../components/EventCard';
 import SpecialEventCard from '../components/SpecialEventCard';
-import { Calendar, Clock, Users, Loader2, ShoppingBag, CheckCircle } from 'lucide-react';
-import { useScrollAnimation } from '../hooks/useScrollAnimation';
+import { Loader2, Calendar, ShoppingBag, CheckCircle } from 'lucide-react';
 import { supabase } from '../lib/supabaseClient';
 import { Database } from '../types/supabase';
 
@@ -99,7 +98,8 @@ const UpcomingEvents: React.FC = () => {
                   time: formatTime(featuredEvent.date),
                   agenda: featuredEvent.description || 'Details coming soon!',
                   imageSrc: featuredEvent.image_url || '/images/revline_logo.png',
-                  registrationLink: featuredEvent.registration_link
+                  registrationLink: featuredEvent.registration_link,
+                  posterFit: (featuredEvent.poster_fit as 'cover' | 'contain') || 'cover',
                 }}
                 isCompleted={false}
               />
@@ -198,6 +198,9 @@ const UpcomingEvents: React.FC = () => {
                       agenda: event.description || 'Details coming soon!',
                       imageSrc: event.image_url || '/images/revline_logo.png',
                       registrationLink: event.registration_link,
+                      posterFit: (event.poster_fit as 'cover' | 'contain') || 'cover',
+                      isTournament: event.is_tournament,
+                      rules: event.rules,
                     }}
                   />
                 </div>

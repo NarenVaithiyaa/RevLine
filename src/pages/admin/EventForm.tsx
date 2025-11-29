@@ -22,6 +22,9 @@ const EventForm: React.FC = () => {
     drive_link: '',
     image_url: '',
     registration_link: '',
+    is_tournament: false,
+    rules: '',
+    poster_fit: 'cover' as 'cover' | 'contain',
   });
 
   useEffect(() => {
@@ -51,6 +54,9 @@ const EventForm: React.FC = () => {
         drive_link: data.drive_link || '',
         image_url: data.image_url || '',
         registration_link: data.registration_link || '',
+        is_tournament: data.is_tournament || false,
+        rules: data.rules || '',
+        poster_fit: (data.poster_fit as 'cover' | 'contain') || 'cover',
       });
     }
     setInitialLoading(false);
@@ -101,6 +107,9 @@ const EventForm: React.FC = () => {
       drive_link: formData.status === 'completed' ? formData.drive_link : null,
       image_url: formData.image_url || null,
       registration_link: formData.status === 'upcoming' ? formData.registration_link : null,
+      is_tournament: formData.status === 'upcoming' ? formData.is_tournament : false,
+      rules: (formData.status === 'upcoming' && formData.is_tournament) ? formData.rules : null,
+      poster_fit: formData.status === 'upcoming' ? formData.poster_fit : null,
     };
 
     let error;
@@ -217,6 +226,34 @@ const EventForm: React.FC = () => {
           )}
 
           {formData.status === 'upcoming' && (
+            <div className="flex items-center gap-3 p-4 bg-white/5 rounded-xl border border-white/10">
+              <input
+                type="checkbox"
+                id="is_tournament"
+                checked={formData.is_tournament}
+                onChange={(e) => setFormData({ ...formData, is_tournament: e.target.checked })}
+                className="w-5 h-5 rounded border-gray-300 text-cyan-600 focus:ring-cyan-500 bg-gray-700"
+              />
+              <label htmlFor="is_tournament" className="text-sm font-medium text-gray-300 cursor-pointer select-none">
+                This is a Tournament Event
+              </label>
+            </div>
+          )}
+
+          {formData.status === 'upcoming' && formData.is_tournament && (
+            <div className="animate-in fade-in slide-in-from-top-4 duration-300">
+              <label className="block text-sm font-medium text-gray-300 mb-2">Rules & Regulations</label>
+              <textarea
+                value={formData.rules}
+                onChange={(e) => setFormData({ ...formData, rules: e.target.value })}
+                rows={6}
+                className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-cyan-500/50 focus:ring-1 focus:ring-cyan-500/50 transition-all duration-300 placeholder-gray-500"
+                placeholder="Enter tournament rules, point system, disqualification criteria, etc..."
+              />
+            </div>
+          )}
+
+          {formData.status === 'upcoming' && (
             <div>
               <label className="block text-sm font-medium text-gray-300 mb-2">Event Poster</label>
               <div className="flex flex-col sm:flex-row items-start gap-4">
@@ -256,6 +293,36 @@ const EventForm: React.FC = () => {
                   {uploading && <p className="text-sm text-cyan-400 mt-2 animate-pulse">Uploading...</p>}
                 </div>
               </div>
+              
+              {formData.image_url && (
+                <div className="mt-4">
+                  <label className="block text-sm font-medium text-gray-300 mb-2">Poster Display Style</label>
+                  <div className="flex gap-4">
+                    <label className="flex items-center gap-2 cursor-pointer">
+                      <input
+                        type="radio"
+                        name="poster_fit"
+                        value="contain"
+                        checked={formData.poster_fit === 'contain'}
+                        onChange={(e) => setFormData({ ...formData, poster_fit: e.target.value as 'cover' | 'contain' })}
+                        className="w-4 h-4 text-cyan-600 bg-gray-700 border-gray-500 focus:ring-cyan-500"
+                      />
+                      <span className="text-gray-300">Full-size (Uncropped)</span>
+                    </label>
+                    <label className="flex items-center gap-2 cursor-pointer">
+                      <input
+                        type="radio"
+                        name="poster_fit"
+                        value="cover"
+                        checked={formData.poster_fit === 'cover'}
+                        onChange={(e) => setFormData({ ...formData, poster_fit: e.target.value as 'cover' | 'contain' })}
+                        className="w-4 h-4 text-cyan-600 bg-gray-700 border-gray-500 focus:ring-cyan-500"
+                      />
+                      <span className="text-gray-300">Cropped (Fit to Card)</span>
+                    </label>
+                  </div>
+                </div>
+              )}
             </div>
           )}
 

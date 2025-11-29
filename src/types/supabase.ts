@@ -20,6 +20,9 @@ export interface Database {
           drive_link: string | null
           image_url: string | null
           registration_link: string | null
+          is_tournament: boolean
+          rules: string | null
+          poster_fit: 'cover' | 'contain' | null
           created_at: string
         }
         Insert: {
@@ -32,6 +35,9 @@ export interface Database {
           drive_link?: string | null
           image_url?: string | null
           registration_link?: string | null
+          is_tournament?: boolean
+          rules?: string | null
+          poster_fit?: 'cover' | 'contain' | null
           created_at?: string
         }
         Update: {
@@ -44,6 +50,9 @@ export interface Database {
           drive_link?: string | null
           image_url?: string | null
           registration_link?: string | null
+          is_tournament?: boolean
+          rules?: string | null
+          poster_fit?: 'cover' | 'contain' | null
           created_at?: string
         }
         Relationships: []

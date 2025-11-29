@@ -1,5 +1,4 @@
 import React from 'react';
-import { Star } from 'lucide-react';
 
 interface SpecialEvent {
   title: string;
@@ -9,6 +8,7 @@ interface SpecialEvent {
   time: string;
   imageSrc?: string;
   registrationLink?: string | null;
+  posterFit?: 'cover' | 'contain' | null;
 }
 
 interface SpecialEventCardProps {
@@ -38,12 +38,12 @@ const SpecialEventCard: React.FC<SpecialEventCardProps> = ({ event, isCompleted 
 
       {/* Image Section */}
       {event.imageSrc && !isCompleted && (
-        <div className="w-full h-[12rem] md:h-[14rem] rounded-2xl overflow-hidden mb-4 relative">
-           <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent z-10"></div>
+        <div className="w-full h-[12rem] md:h-[14rem] rounded-2xl overflow-hidden mb-4 relative bg-black/20">
+           <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent z-10 pointer-events-none"></div>
           <img
             src={event.imageSrc}
             alt={event.title}
-            className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700"
+            className={`w-full h-full ${event.posterFit === 'contain' ? 'object-contain' : 'object-cover'} transform group-hover:scale-105 transition-transform duration-700`}
             onError={(e) => {
               (e.target as HTMLImageElement).style.display = 'none';
               (e.target as HTMLImageElement).parentElement!.innerHTML = `
