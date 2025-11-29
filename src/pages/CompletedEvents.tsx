@@ -46,9 +46,9 @@ const CompletedEvents: React.FC = () => {
 
         {/* Completed Events Table */}
         <div className="mb-16 overflow-x-auto">
-          <table className="w-full text-left border-collapse bg-gray-800/50 rounded-xl overflow-hidden">
+          <table className="w-full text-left border-collapse bg-gray-900/40 backdrop-blur-xl border border-white/10 rounded-xl overflow-hidden">
             <thead>
-              <tr className="bg-gray-800 text-cyan-400 text-lg">
+              <tr className="bg-white/5 text-cyan-400 text-lg">
                 <th className="p-6 font-bold">Date</th>
                 <th className="p-6 font-bold">Session Name</th>
                 <th className="p-6 font-bold">Location</th>
@@ -57,7 +57,7 @@ const CompletedEvents: React.FC = () => {
             </thead>
             <tbody>
               {events.map((event) => (
-                <tr key={event.session} className="border-b border-gray-700 hover:bg-gray-700/50 transition-colors">
+                <tr key={event.session} className="border-b border-white/10 hover:bg-white/5 transition-colors">
                   <td className="p-6 text-gray-300 whitespace-nowrap">{event.date}</td>
                   <td className="p-6 text-white font-semibold whitespace-nowrap">Session {event.session}</td>
                   <td className="p-6 text-gray-300">{event.venue}</td>
@@ -80,7 +80,7 @@ const CompletedEvents: React.FC = () => {
             href="https://drive.google.com/drive/folders/1YVN2QCYQJJ092nqE228khA_Fe4mHZa0f" 
             target="_blank" 
             rel="noopener noreferrer"
-            className="inline-block bg-gradient-to-r from-cyan-400 to-blue-500 text-white px-6 py-3 rounded-lg font-semibold hover:from-cyan-500 hover:to-blue-600 transition-all duration-300 transform hover:scale-105"
+            className="inline-block bg-white/10 backdrop-blur-md border border-white/20 text-white px-6 py-3 rounded-lg font-semibold hover:bg-white/20 transition-all duration-300 transform hover:scale-105"
           >
             📸 View Photos & Videos
           </a>

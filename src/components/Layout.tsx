@@ -23,7 +23,7 @@ const Layout: React.FC<LayoutProps> = ({ children, currentPage, setCurrentPage }
       {/* Navigation */}
       <div className="fixed top-6 left-0 right-0 z-50 flex justify-center px-4">
         <nav className={`w-full max-w-5xl transition-all duration-300 ${
-          isMobileMenuOpen ? 'rounded-3xl bg-gray-900/90' : 'rounded-full bg-gray-900/40'
+          isMobileMenuOpen ? 'rounded-[2rem] bg-gray-900/90' : 'rounded-full bg-gray-900/40'
         } backdrop-blur-xl border border-white/10 shadow-2xl supports-[backdrop-filter]:bg-gray-900/40`}>
           <div className="px-6 sm:px-8">
             <div className="flex items-center justify-between h-16">
@@ -82,7 +82,7 @@ const Layout: React.FC<LayoutProps> = ({ children, currentPage, setCurrentPage }
                     setCurrentPage(item.id);
                     setIsMobileMenuOpen(false);
                   }}
-                  className={`block w-full text-left px-4 py-2 text-sm font-medium rounded-xl transition-colors duration-200 ${
+                  className={`block w-full text-left px-4 py-2 text-sm font-medium rounded-full transition-colors duration-200 ${
                     currentPage === item.id
                       ? 'text-white bg-white/10'
                       : 'text-gray-300 hover:text-white hover:bg-white/5'

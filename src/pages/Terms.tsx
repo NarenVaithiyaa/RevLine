@@ -27,7 +27,7 @@ const Terms: React.FC = () => {
         </div>
 
         {/* Rules & Regulations Section */}
-        <div ref={comingSoonRef} className="bg-gradient-to-br from-gray-800 to-gray-700 rounded-2xl p-12 text-center shadow-2xl mb-16 scale-in">
+        <div ref={comingSoonRef} className="bg-gray-900/40 backdrop-blur-xl border border-white/10 rounded-2xl p-12 text-center shadow-2xl mb-16 scale-in">
           <h2 className="text-3xl font-bold text-white mb-12">
             Rules & Regulations for Club Members
           </h2>
@@ -96,7 +96,7 @@ const Terms: React.FC = () => {
 
         {/* Key Points Preview */}
         <div ref={keyPointsRef} className="grid md:grid-cols-2 gap-0 mb-0 fade-left">
-          <div className="bg-gradient-to-br from-blue-900 to-blue-800 p-8 rounded-2xl scale-in stagger-1">
+          <div className="bg-blue-900/20 backdrop-blur-xl border border-white/10 p-8 rounded-2xl scale-in stagger-1">
             <Shield className="w-12 h-12 text-cyan-400 mb-0" />
             <h3 className="text-2xl font-bold text-white mb-0">Safety First</h3>
             <p className="text-gray-200 leading-relaxed">
@@ -104,7 +104,7 @@ const Terms: React.FC = () => {
               Proper guidelines and safety protocols will be clearly outlined.
             </p>
           </div>
-          <div className="bg-gradient-to-br from-cyan-900 to-cyan-800 p-8 rounded-2xl scale-in stagger-2">
+          <div className="bg-cyan-900/20 backdrop-blur-xl border border-white/10 p-8 rounded-2xl scale-in stagger-2">
             <AlertCircle className="w-12 h-12 text-cyan-400 mb-0" />
             <h3 className="text-2xl font-bold text-white mb-0">Community Standards</h3>
             <p className="text-gray-200 leading-relaxed">
