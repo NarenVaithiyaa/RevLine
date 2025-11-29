@@ -53,6 +53,13 @@ const EventCard: React.FC<EventCardProps> = ({ event, isCompleted = false }) => 
               <div className="absolute top-4 right-4 bg-black/50 backdrop-blur-md p-2 rounded-full text-white/80 hover:text-white transition-colors">
                 <RotateCw className="w-5 h-5" />
               </div>
+              
+              {/* Touch to flip hint */}
+              <div className="absolute bottom-6 left-0 right-0 flex justify-center pointer-events-none">
+                <span className="bg-black/60 backdrop-blur-md text-white/90 text-sm font-medium px-4 py-1.5 rounded-full flex items-center gap-2 border border-white/10 animate-pulse">
+                  <RotateCw className="w-3 h-3" /> Touch to flip
+                </span>
+              </div>
             </div>
 
             {/* Back Face - Details */}
