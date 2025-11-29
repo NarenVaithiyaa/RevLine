@@ -1,35 +1,86 @@
-import React from 'react';
-import { Trophy } from 'lucide-react';
-import { useScrollAnimation } from '../hooks/useScrollAnimation';
+import React, { useEffect, useState } from 'react';
+import { Trophy, Loader2, ExternalLink } from 'lucide-react';
+import { supabase } from '../lib/supabaseClient';
+import { Database } from '../types/supabase';
 
-const events = [
-  { session: 1, date: "27th July, 2025", venue: "Zone-2, Race course, Coimbatore" },
-  { session: 2, date: "3rd August, 2025", venue: "Herkley's turf, Peelamedu, Coimbatore" },
-  { session: 3, date: "10th August, 2025", venue: "Ponnuuthu Amman Temple" },
-  { session: 4, date: "17th August, 2025", venue: "PRS Ground" },
-  { session: 5, date: "24th August, 2025", venue: "Race Course Zone - 2" },
-  { session: 6, date: "31st August, 2025", venue: "Herkley's turf, Peelamedu, Coimbatore" },
-  { session: 7, date: "7th September, 2025", venue: "Thogaimalai" },
-  { session: 8, date: "14th September, 2025", venue: "Herkley's turf, Peelamedu, Coimbatore" },
-  { session: 9, date: "21st September, 2025", venue: "PRS Ground" },
-  { session: 10, date: "28th September, 2025", venue: "TIFO turf, Coimbatore" },
-  { session: 11, date: "5th October, 2025", venue: "Champ badminton academy, Coimbatore" },
-  { session: 12, date: "12th October, 2025", venue: "dynk and rally, Vadavalli, Coimbatore" },
-  { session: 13, date: "19th October, 2025", venue: "Race Course Zone - 2" },
-  { session: 14, date: "26th October, 2025", venue: "Herkley turf" },
-  { session: 15, date: "November 2, 2025", venue: "Perumal Swamy temple" },
-  { session: 16, date: "8th Nov, Saturday", venue: "Herkley turf, Peelamedu" },
-  { session: 17, date: "16th November", venue: "Race Course Zone-2" },
+type Event = Database['public']['Tables']['events']['Row'];
+
+const STATIC_EVENTS: Event[] = [
+  { id: 's17', title: 'Session 17', date: '2025-11-16', venue: 'Race Course Zone-2', status: 'completed', drive_link: null, image_url: null, registration_link: null, created_at: '', description: '' },
+  { id: 's16', title: 'Session 16', date: '2025-11-08', venue: 'Herkley turf, Peelamedu', status: 'completed', drive_link: null, image_url: null, registration_link: null, created_at: '', description: '' },
+  { id: 's15', title: 'Session 15', date: '2025-11-02', venue: 'Perumal Swamy temple', status: 'completed', drive_link: null, image_url: null, registration_link: null, created_at: '', description: '' },
+  { id: 's14', title: 'Session 14', date: '2025-10-26', venue: 'Herkley turf', status: 'completed', drive_link: null, image_url: null, registration_link: null, created_at: '', description: '' },
+  { id: 's13', title: 'Session 13', date: '2025-10-19', venue: 'Race Course Zone - 2', status: 'completed', drive_link: null, image_url: null, registration_link: null, created_at: '', description: '' },
+  { id: 's12', title: 'Session 12', date: '2025-10-12', venue: 'dynk and rally, Vadavalli, Coimbatore', status: 'completed', drive_link: null, image_url: null, registration_link: null, created_at: '', description: '' },
+  { id: 's11', title: 'Session 11', date: '2025-10-05', venue: 'Champ badminton academy, Coimbatore', status: 'completed', drive_link: null, image_url: null, registration_link: null, created_at: '', description: '' },
+  { id: 's10', title: 'Session 10', date: '2025-09-28', venue: 'TIFO turf, Coimbatore', status: 'completed', drive_link: null, image_url: null, registration_link: null, created_at: '', description: '' },
+  { id: 's9', title: 'Session 9', date: '2025-09-21', venue: 'PRS Ground', status: 'completed', drive_link: null, image_url: null, registration_link: null, created_at: '', description: '' },
+  { id: 's8', title: 'Session 8', date: '2025-09-14', venue: "Herkley's turf, Peelamedu, Coimbatore", status: 'completed', drive_link: null, image_url: null, registration_link: null, created_at: '', description: '' },
+  { id: 's7', title: 'Session 7', date: '2025-09-07', venue: 'Thogaimalai', status: 'completed', drive_link: null, image_url: null, registration_link: null, created_at: '', description: '' },
+  { id: 's6', title: 'Session 6', date: '2025-08-31', venue: "Herkley's turf, Peelamedu, Coimbatore", status: 'completed', drive_link: null, image_url: null, registration_link: null, created_at: '', description: '' },
+  { id: 's5', title: 'Session 5', date: '2025-08-24', venue: 'Race Course Zone - 2', status: 'completed', drive_link: null, image_url: null, registration_link: null, created_at: '', description: '' },
+  { id: 's4', title: 'Session 4', date: '2025-08-17', venue: 'PRS Ground', status: 'completed', drive_link: null, image_url: null, registration_link: null, created_at: '', description: '' },
+  { id: 's3', title: 'Session 3', date: '2025-08-10', venue: 'Ponnuuthu Amman Temple', status: 'completed', drive_link: null, image_url: null, registration_link: null, created_at: '', description: '' },
+  { id: 's2', title: 'Session 2', date: '2025-08-03', venue: "Herkley's turf, Peelamedu, Coimbatore", status: 'completed', drive_link: null, image_url: null, registration_link: null, created_at: '', description: '' },
+  { id: 's1', title: 'Session 1', date: '2025-07-27', venue: 'Zone-2, Race course, Coimbatore', status: 'completed', drive_link: null, image_url: null, registration_link: null, created_at: '', description: '' },
 ];
 
 const CompletedEvents: React.FC = () => {
-  const headerRef = useScrollAnimation();
+  const [events, setEvents] = useState<Event[]>([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const fetchEvents = async () => {
+      try {
+        const { data, error } = await supabase
+          .from('events')
+          .select('*')
+          .eq('status', 'completed')
+          .order('date', { ascending: false });
+
+        if (error) throw error;
+        
+        // Combine fetched events with static events and sort by date descending
+        const allEvents = [...(data || []), ...STATIC_EVENTS].sort((a, b) => 
+          new Date(b.date).getTime() - new Date(a.date).getTime()
+        );
+        
+        setEvents(allEvents);
+      } catch (error) {
+        console.error('Error fetching completed events:', error);
+        setEvents(STATIC_EVENTS);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchEvents();
+  }, []);
+
+  const formatDate = (dateString: string) => {
+    if (!dateString) return 'TBA';
+    const date = new Date(dateString);
+    if (isNaN(date.getTime())) return dateString;
+    return date.toLocaleDateString('en-US', { 
+      year: 'numeric', 
+      month: 'long', 
+      day: 'numeric' 
+    });
+  };
+
+  if (loading) {
+    return (
+      <div className="min-h-screen bg-gray-900 flex items-center justify-center">
+        <Loader2 className="w-12 h-12 text-cyan-400 animate-spin" />
+      </div>
+    );
+  }
 
   return (
     <div className="min-h-screen bg-gray-900 pt-36 pb-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header Section */}
-        <div ref={headerRef} className="text-center mb-16 fade-up">
+        <div className="text-center mb-16">
           <div className="flex items-center justify-center mb-6">
             <div className="bg-gradient-to-r from-cyan-400 to-blue-500 p-3 rounded-xl">
               <Trophy className="w-8 h-8 text-white" />
@@ -56,34 +107,37 @@ const CompletedEvents: React.FC = () => {
               </tr>
             </thead>
             <tbody>
-              {events.map((event) => (
-                <tr key={event.session} className="border-b border-white/10 hover:bg-white/5 transition-colors">
-                  <td className="p-6 text-gray-300 whitespace-nowrap">{event.date}</td>
-                  <td className="p-6 text-white font-semibold whitespace-nowrap">Session {event.session}</td>
-                  <td className="p-6 text-gray-300">{event.venue}</td>
-                  <td className="p-6 text-gray-400">
-                    Link TBA
+              {events.length > 0 ? (
+                events.map((event) => (
+                  <tr key={event.id} className="border-b border-white/10 hover:bg-white/5 transition-colors">
+                    <td className="p-6 text-gray-300 whitespace-nowrap">{formatDate(event.date)}</td>
+                    <td className="p-6 text-white font-semibold whitespace-nowrap">{event.title}</td>
+                    <td className="p-6 text-gray-300">{event.venue || 'TBA'}</td>
+                    <td className="p-6 text-gray-400">
+                      {event.drive_link ? (
+                        <a 
+                          href={event.drive_link} 
+                          target="_blank" 
+                          rel="noopener noreferrer"
+                          className="text-cyan-400 hover:text-cyan-300 flex items-center gap-2"
+                        >
+                          View Photos <ExternalLink className="w-4 h-4" />
+                        </a>
+                      ) : (
+                        'Link TBA'
+                      )}
+                    </td>
+                  </tr>
+                ))
+              ) : (
+                <tr>
+                  <td colSpan={4} className="p-6 text-center text-gray-400">
+                    No completed events found.
                   </td>
                 </tr>
-              ))}
+              )}
             </tbody>
           </table>
-        </div>
-
-        {/* Event Media Archive */}
-        <div className="text-center">
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-            Event Media <span className="text-cyan-400">Archive</span>
-          </h2>
-          <p className="text-xl text-gray-300 mb-6">View the session's magic moments below :</p>
-          <a 
-            href="https://drive.google.com/drive/folders/1YVN2QCYQJJ092nqE228khA_Fe4mHZa0f" 
-            target="_blank" 
-            rel="noopener noreferrer"
-            className="inline-block bg-white/10 backdrop-blur-md border border-white/20 text-white px-6 py-3 rounded-lg font-semibold hover:bg-white/20 transition-all duration-300 transform hover:scale-105"
-          >
-            📸 View Photos & Videos
-          </a>
         </div>
       </div>
     </div>

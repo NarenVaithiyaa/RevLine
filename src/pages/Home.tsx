@@ -1,14 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { Users, Target, Zap, Calendar, MessageCircle, Trophy, ArrowRight } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import { useScrollAnimation } from '../hooks/useScrollAnimation';
 import Silk from '../components/Silk';
 import TrueFocus from '../components/TrueFocus';
 
-interface HomeProps {
-  setCurrentPage?: (page: string) => void;
-}
-
-const Home: React.FC<HomeProps> = ({ setCurrentPage }) => {
+const Home: React.FC = () => {
   const heroRef = useScrollAnimation();
   const whyRef = useScrollAnimation();
   const whatRef = useScrollAnimation();
@@ -88,12 +85,12 @@ const Home: React.FC<HomeProps> = ({ setCurrentPage }) => {
           </div>
           
           <div className="flex flex-row gap-3 sm:gap-6 justify-center items-center flex-wrap">
-            <button 
-              onClick={() => setCurrentPage?.('upcoming-events')}
-              className="bg-gray-900/40 backdrop-blur-xl border border-white/10 text-white px-4 sm:px-6 py-2 sm:py-3 rounded-xl font-bold text-sm sm:text-lg hover:bg-gray-800/60 transition-all duration-300 transform hover:scale-105 shadow-lg w-auto min-w-[130px] sm:min-w-[160px]"
+            <Link 
+              to="/upcoming-events"
+              className="bg-gray-900/40 backdrop-blur-xl border border-white/10 text-white px-4 sm:px-6 py-2 sm:py-3 rounded-xl font-bold text-sm sm:text-lg hover:bg-gray-800/60 transition-all duration-300 transform hover:scale-105 shadow-lg w-auto min-w-[130px] sm:min-w-[160px] text-center flex items-center justify-center"
             >
               Join the Movement
-            </button>
+            </Link>
             <button 
               onClick={scrollToWhySection}
               className="bg-gray-900/40 backdrop-blur-xl border border-white/10 text-cyan-400 px-4 sm:px-6 py-2 sm:py-3 rounded-xl font-bold text-sm sm:text-lg hover:bg-gray-800/60 transition-all duration-300 w-auto min-w-[130px] sm:min-w-[160px]"
@@ -308,13 +305,13 @@ const Home: React.FC<HomeProps> = ({ setCurrentPage }) => {
           </div>
           
           <div className="flex items-center justify-center">
-            <button 
-              onClick={() => setCurrentPage?.('upcoming-events')}
+            <Link 
+              to="/upcoming-events"
               className="bg-white/20 backdrop-blur-xl border border-white/30 text-white px-6 py-3 rounded-xl font-black text-lg hover:bg-white/30 transition-all duration-300 transform hover:scale-105 shadow-2xl flex items-center space-x-2 group"
             >
               <span>Let's Rev It Up, Together!</span>
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-200" />
-            </button>
+            </Link>
           </div>
         </div>
       </section>
