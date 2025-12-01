@@ -8,7 +8,8 @@ export default defineConfig({
     react(),
     VitePWA({
       registerType: 'autoUpdate',
-      includeAssets: ['favicon.ico', 'apple-touch-icon.png', 'masked-icon.svg'],
+      injectRegister: 'auto',
+      includeAssets: [],
       manifest: {
         name: 'RevLine Admin',
         short_name: 'RevLine Admin',
@@ -18,17 +19,21 @@ export default defineConfig({
           {
             src: '/images/admin_logo.png',
             sizes: '192x192',
-            type: 'image/png'
+            type: 'image/png',
+            purpose: 'any maskable'
           },
           {
             src: '/images/admin_logo.png',
             sizes: '512x512',
-            type: 'image/png'
+            type: 'image/png',
+            purpose: 'any maskable'
           }
         ],
         start_url: '/',
         display: 'standalone',
-        background_color: '#111827'
+        background_color: '#111827',
+        scope: '/',
+        orientation: 'portrait'
       }
     }),
     {
