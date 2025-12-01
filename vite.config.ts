@@ -15,7 +15,7 @@ export default defineConfig({
         name: 'RevLine',
         short_name: 'RevLine',
         description: 'RevLine Fitness Community Website',
-        theme_color: '#ffffff',
+        theme_color: '#111827',
         icons: [
           {
             src: '/images/revline_logo.png',
@@ -44,7 +44,7 @@ export default defineConfig({
         ],
         start_url: '/',
         display: 'standalone',
-        background_color: '#ffffff',
+        background_color: '#111827',
         scope: '/',
         orientation: 'portrait'
       },
